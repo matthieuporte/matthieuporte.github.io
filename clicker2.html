@@ -1,0 +1,778 @@
+<html>
+<head>
+  <title>clicker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/19119-200.png" type="image/x-icon" />
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!--fonts-awesome-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body{
+  margin: 0px 0px 0px 0px;
+  background-image: url(./images/background.jpg);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+.global{
+  overflow: hidden;
+  height: 100%;
+}
+@media (max-width: 1000px) {
+body{
+  background-image: none;
+}
+}
+.row{
+  margin-left:0px;
+  margin-right:0px;
+}
+.amelio{
+  padding-top: 15px;
+  background-color: white;
+  height: 130px;
+  font-size: large;
+}
+.amelio:hover{
+  /*box-shadow: 10px 10px 5px grey;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 4;
+}
+.amelios{
+  padding-right: 0px;
+  overflow: auto;
+  height: 100%;
+}
+.bas-amelio{
+  height: 10px;
+  background-color: white;
+}
+.minerai-img{
+  width: 400px;
+  margin-left: 20%;
+  margin-top: 18%;
+}
+.responsive{
+  display: none;
+  width: 100%;
+  height: 10000px;
+  background-color: black;
+  color: white;
+  z-index: 3;
+  text-align: center;
+  padding-top: 50px;
+  font-size: xx-large;
+}
+#changement_minerai{
+  width: 100%;
+  height: 10000px;
+  background-color: black;
+  z-index: 5;
+}
+#nbclicktext{
+  font-size: 3em;
+}
+#nbprclicktext,#nbprsectext{
+  font-size: x-large;
+}
+.buy{
+  float: right;
+  margin-top: 5px;
+  opacity: 0.5;
+  cursor: default;
+}
+.plusprclick,.plusprsec{
+  font-size: medium;
+}
+.icon{
+  float: left;
+  margin-left: 8px;
+  color: #5c5d60;
+}
+.icon:hover{
+  color: #D35400;
+}
+a:focus{
+    outline: none;
+}
+.btn:focus{
+    outline: none;
+}
+.btn:active{
+    outline: none;
+}
+.icons{
+  position: fixed;
+  background-color: black;
+  border-radius: 0px 10px 0px 0px;
+  padding: 10px 10px 10px 2px;
+  bottom: 0;
+}
+@media (min-width:1300px){
+  .minerai-img{
+    width: 400px;
+    margin-left: 23%;
+    margin-top: 12%;
+  }
+}
+@media (max-width: 1100px){
+  .amelio{
+    height: 150px;
+  }
+}
+@media (max-width: 1000px) {
+.responsive{
+  display: block;
+}
+.icons{
+  position: relative;
+}
+}
+</style>
+</head>
+<body>
+
+  <div class="responsive">site non responsive</div>
+  <div class="responsive" id="fin_jeu">Bien joué, vous étes désormais l'empereur de l'or et des minerais</div>
+  <div id="changement_minerai"></div>
+  <div class="row global">
+    <div class="col-md-6">
+      <br>
+      <div id="nbclicktext">
+        <p><span id="nbclick">0</span> <span class="minerai">charbons</span></p>
+      </div>
+      <div id="nbprclicktext">
+        <span id="nbprclick">1</span> par click
+      </div>
+      <div id="nbprsectext">
+        <span id="nbprsec">0</span> par seconde
+      </div>
+      <img src="./images/Coal.png" class="minerai-img" id="minerai">
+    </div>
+    <div class="col-md-6 amelios">
+      <div class="row" id="up-1">
+        <div class="col-md-6 amelio">
+          <b>Pioche</b> <span id="nbpioche"></span><br>
+          <p>prix : <span id="prixpioche">20</span></p>
+          <button class="buy btn btn-warning" id="buypioche">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 1<span class="minerai"> charbon</span> par click
+        </div>
+        <div class="col-md-6 amelio">
+          <b>Sac</b> <span id="nbsac"></span><br>
+          <p>prix : <span id="prixsac">300</span></p>
+          <button class="buy btn btn-warning" id="buysac">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 15<span class="minerai"> charbon</span> par click
+        </div>
+      </div>
+
+
+
+      <div class="row" id="up-2">
+        <div class="col-md-6 amelio">
+          <b>travailleur</b> <span id="nbtravailleur"></span><br>
+          <p>prix : <span id="prixtravailleur">1100</span></p>
+          <button class="buy btn btn-warning" id="buytravailleur">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 1<span class="minerai"> charbon</span> par sec <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-6 amelio">
+          <b>chariot</b> <span id="nbchariot"></span><br>
+          <p>prix : <span id="prixchariot">1800</span></p>
+          <button class="buy btn btn-warning" id="buychariot">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 80<span class="minerai"> charbon</span> par click
+        </div>
+      </div>
+
+      <div class="row" id="up-3">
+        <div class="col-md-6 amelio">
+          <b>travailleur seconde classe</b> <span id="nbtravailleur_s_c"></span><br>
+          <p>prix : <span id="prixtravailleur_s_c">9800</span></p>
+          <button class="buy btn btn-warning" id="buytravailleur_s_c">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 8<span class="minerai"> charbon</span> par sec <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-6 amelio">
+          <b>marteau piqueur</b> <span id="nbmarteau_piqueur"></span><br>
+          <p>prix : <span id="prixmarteau_piqueur">21.000</span></p>
+          <button class="buy btn btn-warning" id="buymarteau_piqueur">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 1000<span class="minerai"> charbon</span> par click
+        </div>
+      </div>
+
+      <div class="row" id="up-4">
+        <div class="col-md-6 amelio">
+          <b>mine</b> <span id="nbmine"></span><br>
+          <p>prix : <span id="prixmine">70.000</span></p>
+          <button class="buy btn btn-warning" id="buymine">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 3450<span class="minerai"> charbon</span> par click
+        </div>
+        <div class="col-md-6 amelio">
+          <b>travailleur première classe</b> <span id="nbtravailleur_p_c"></span><br>
+          <p>prix : <span id="prixtravailleur_p_c">121.000</span></p>
+          <button class="buy btn btn-warning" id="buytravailleur_p_c">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 105<span class="minerai"> charbon</span> par sec <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="row" id="up-5">
+        <div class="col-md-6 amelio">
+          <b>montagne</b> <span id="nbmontagne"></span><br>
+          <p>prix : <span id="prixmontagne">198.000</span></p>
+          <button class="buy btn btn-warning" id="buymontagne">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 9900<span class="minerai"> charbon</span> par click
+        </div>
+        <div class="col-md-6 amelio">
+          <b>vallée</b> <span id="nbvallee"></span><br>
+          <p>prix : <span id="prixvallee">500.000</span></p>
+          <button class="buy btn btn-warning" id="buyvallee">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 24.500<span class="minerai"> charbon</span> par click
+        </div>
+      </div>
+
+      <div class="row" id="up-6">
+        <div class="col-md-6 amelio">
+          <b>massif montagneux</b> <span id="nbmassif_montagneux"></span><br>
+          <p>prix : <span id="prixmassif_montagneux">1.2M</span></p>
+          <button class="buy btn btn-warning" id="buymassif_montagneux">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 59.000<span class="minerai"> charbon</span> par click
+        </div>
+        <div class="col-md-6 amelio">
+          <b>galaxie</b> <span id="nbgalaxie"></span><br>
+          <p>prix : <span id="prixgalaxie">7M</span></p>
+          <button class="buy btn btn-warning" id="buygalaxie">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 300.000<span class="minerai"> charbon</span> par click
+        </div>
+      </div>
+
+      <div class="row" id="up-7">
+        <div class="col-md-6 amelio">
+          <b>Stakhanov</b> <span id="nbstakhanov"></span><br>
+          <p>prix : <span id="prixstakhanov">12M</span></p>
+          <button class="buy btn btn-warning" id="buystakhanov">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          + 15.000<span class="minerai"> charbon</span> par sec <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-6 amelio">
+          <b id="minermieuxtexte">miner du fer</b><br>
+          <p>prix : <span id="prixminermieux">60M</span></p>
+          <button class="buy btn btn-warning" id="buyminermieux">buy <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div class="row bas-amelio" id="bas-amelio">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+
+          <!-- Modal régles-->
+        <div class="modal fade" id="rules" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">regles</h4>
+              </div>
+              <div class="modal-body">
+                <p>Bienvenue dans Clicker 2,<br>
+                   Le but du jeu est de devenir l'empereur de l'or. Pour cela, vous commencerez par ramasser un peu de charbon en cliquant dessus. Ensuite, vous pourrez acheter des améliorations pour ramasser de charbon de manière plus rentable. Une fois que vous en aurez fini avec l'industrie du charbon(facile), vous pourrez commencer a miner du fer(moyen), pour finir par l'or(difficile). <br><br>
+                   Good luck ;)
+
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Modal stats-->
+        <div class="modal fade" id="stats" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">stats</h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                  nombre de cliks au total : <span id="nbclicktotal">0</span><br>
+                  nombre de charbons au total : <span id="nbcharbontotal">0</span><br>
+                  nombre de fer au total : <span id="nbfertotal">0</span><br>
+                  nombre d'or au total : <span id="nbgoldtotal">0</span><br>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;il est : <span id="heure">NaN</span>
+                  </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+//variables globales
+var $nbminerai = $("#nbclick");
+var nbminerai = 0;
+var nbprclick = 1;
+var nbprsec = 0;
+var evolutionprix = 1.1;
+var $nbprclick = $("#nbprclick");
+var $nbprsec = $("#nbprsec");
+var nbclicktotal = 0;
+var $nbclicktotal = $("#nbclicktotal");
+
+var nbcharbontotal = 0;
+var $nbcharbontotal = $("#nbcharbontotal");
+var nbfertotal = 0;
+var $nbfertotal = $("#nbfertotal");
+var nbgoldtotal = 0;
+var $nbgoldtotal = $("#nbgoldtotal");
+
+var timeoutID;
+var currentminerai = 1;
+
+var now = new Date();
+var heure   = ('0'+now.getHours()  ).slice(-2);
+var minute  = ('0'+now.getMinutes()).slice(-2);
+//fin variables globales
+
+
+//fadein up
+var $up2 = $("#up-2");
+$up2.hide();
+var $up3 = $("#up-3");
+$up3.hide();
+var $up4 = $("#up-4");
+$up4.hide();
+var $up5 = $("#up-5");
+$up5.hide();
+var $up6 = $("#up-6");
+$up6.hide();
+var $up7 = $("#up-7");
+$up7.hide();
+$("#bas-amelio").hide();
+var $changement_minerai = $("#changement_minerai");
+$changement_minerai.hide();
+//end fadein up
+
+
+var Outil = function(prix,prixbase,nb,plusprclick,plusprsec,$buy,$nb,$prix,fade){
+  this.prix = prix;
+  this.prixbase = prixbase;
+  this.nb = nb;
+  this.plusprclick = plusprclick;
+  this.plusprsec = plusprsec;
+  this.$buy = $buy;
+  this.$nb = $nb;
+  this.$prix = $prix;
+  this.fade = fade;
+};
+
+var pioche            = new Outil(20,20,0,1,0,$("#buypioche"),$("#nbpioche"),$("#prixpioche"),0);
+var sac               = new Outil(300,300,0,15,0,$("#buysac"),$("#nbsac"),$("#prixsac"),$up2);
+var travailleur       = new Outil(1100,1100,0,0,10,$("#buytravailleur"),$("#nbtravailleur"),$("#prixtravailleur"),0);
+var chariot           = new Outil(1800,1800,0,80,0,$("#buychariot"),$("#nbchariot"),$("#prixchariot"),$up3);
+var travailleur_s_c   = new Outil(9800,9800,0,0,80,$("#buytravailleur_s_c"),$("#nbtravailleur_s_c"),$("#prixtravailleur_s_c"),0);
+var marteau_piqueur   = new Outil(21000,21000,0,1000,0,$("#buymarteau_piqueur"),$("#nbmarteau_piqueur"),$("#prixmarteau_piqueur"),$up4);
+var mine              = new Outil(70000,70000,0,3450,0,$("#buymine"),$("#nbmine"),$("#prixmine"),0);
+var travailleur_p_c   = new Outil(121000,121000,0,0,1050,$("#buytravailleur_p_c"),$("#nbtravailleur_p_c"),$("#prixtravailleur_p_c"),$up5);
+var montagne          = new Outil(198000,198000,0,9900,0,$("#buymontagne"),$("#nbmontagne"),$("#prixmontagne"),0);
+var vallee            = new Outil(500000,500000,0,24500,0,$("#buyvallee"),$("#nbvallee"),$("#prixvallee"),$up6);
+var massif_montagneux = new Outil(1200000,1200000,0,59000,0,$("#buymassif_montagneux"),$("#nbmassif_montagneux"),$("#prixmassif_montagneux"),0);
+var galaxie           = new Outil(7000000,7000000,0,300000,0,$("#buygalaxie"),$("#nbgalaxie"),$("#prixgalaxie"),$up7);
+var stakhanov         = new Outil(12000000,12000000,0,0,150000,$("#buystakhanov"),$("#nbstakhanov"),$("#prixstakhanov"),0);
+var minermieux        = new Outil(60000000,60000000,0,0,0,$("#buyminermieux"),$(""),$("#prixminermieux"),0);
+
+
+//functions
+function contenu_click(tool) {
+    if(tool.prix <= nbminerai){
+      tool.$nb.text(tool.nb += 1);
+      nbminerai -= tool.prix;
+      $nbminerai.html(reduire_decimale(nbminerai));
+      tool.prix *= evolutionprix;
+      tool.$prix.html(reduire_decimale(tool.prix));
+
+      nbprclick += tool.plusprclick;
+      $nbprclick.html(reduire_decimale(nbprclick));
+      if (tool.fade !== 0){
+        tool.fade.fadeIn(500);
+      }
+    }
+  return tool;
+}
+
+function contenu_sec(tool) {
+    if(tool.prix <= nbminerai){
+      tool.$nb.text(tool.nb += 1);
+      nbminerai -= tool.prix;
+      $nbminerai.html(reduire_decimale(nbminerai));
+      tool.prix *= evolutionprix;
+      tool.$prix.html(reduire_decimale(tool.prix));
+
+      nbprsec += tool.plusprsec;
+      $nbprsec.html(reduire_decimale(nbprsec));
+      if (tool.fade !== 0){
+        tool.fade.fadeIn(500);
+      }
+    }
+  return tool;
+}
+
+function reduire_decimale(nombre) {
+  if(nombre > 999999){
+    nombre /= 1000000;
+    nombre = Math.round(nombre*100)/100;
+    nombre = nombre+"M";
+  } else {
+    nombre = Math.round(nombre);
+  }
+  return nombre;
+};
+
+
+function test_valeur_button(tool) {
+  if(tool.prix <= nbminerai){
+    tool.$buy.css({"opacity": "1","cursor":"pointer"})
+  } else {
+    tool.$buy.css({"opacity": "0.5","cursor":"default"})
+  }
+  return tool;
+}
+
+function minerai_auto() {
+  if (nbprsec < 100 && nbprsec !== 0){
+    nbminerai += 1;
+    timeoutID = setTimeout(function(){ minerai_auto() }, 1000/nbprsec);
+  } else {
+    nbminerai += nbprsec/10;
+    timeoutID = setTimeout(function(){ minerai_auto() }, 100);
+  }
+  $nbminerai.html(reduire_decimale(nbminerai));
+
+
+  pioche=test_valeur_button(pioche);
+  sac=test_valeur_button(sac);
+  travailleur=test_valeur_button(travailleur);
+  chariot=test_valeur_button(chariot);
+  travailleur_s_c=test_valeur_button(travailleur_s_c);
+  marteau_piqueur=test_valeur_button(marteau_piqueur);
+  mine=test_valeur_button(mine);
+  travailleur_p_c=test_valeur_button(travailleur_p_c);
+  montagne=test_valeur_button(montagne);
+  vallee=test_valeur_button(vallee);
+  massif_montagneux=test_valeur_button(massif_montagneux);
+  galaxie=test_valeur_button(galaxie);
+  stakhanov=test_valeur_button(stakhanov);
+  minermieux=test_valeur_button(minermieux);
+}
+minerai_auto();
+
+//contenu_click
+//pioche
+pioche.$buy.on("click",function(){
+  pioche=contenu_click(pioche);
+})
+
+//sac
+sac.$buy.on("click",function(){
+  sac=contenu_click(sac);
+})
+
+//chariot
+chariot.$buy.on("click",function(){
+  chariot=contenu_click(chariot);
+})
+
+//marteau_piqueur
+marteau_piqueur.$buy.on("click",function(){
+  marteau_piqueur=contenu_click(marteau_piqueur);
+})
+
+//mine
+mine.$buy.on("click",function(){
+  mine=contenu_click(mine);
+})
+
+//montagne
+montagne.$buy.on("click",function(){
+  montagne=contenu_click(montagne);
+})
+
+//vallee
+vallee.$buy.on("click",function(){
+  vallee=contenu_click(vallee);
+})
+
+//massif_montagneux
+massif_montagneux.$buy.on("click",function(){
+  massif_montagneux=contenu_click(massif_montagneux);
+})
+
+//galaxie
+galaxie.$buy.on("click",function(){
+  galaxie=contenu_click(galaxie);
+})
+
+//contenu_sec
+//travailleur
+travailleur.$buy.on("click",function(){
+  travailleur=contenu_sec(travailleur);
+})
+
+//travailleur_s_c
+travailleur_s_c.$buy.on("click",function(){
+  travailleur_s_c=contenu_sec(travailleur_s_c);
+})
+
+//travailleur_p_c
+travailleur_p_c.$buy.on("click",function(){
+  travailleur_p_c=contenu_sec(travailleur_p_c);
+})
+
+//stakhanov
+stakhanov.$buy.on("click",function(){
+  stakhanov=contenu_sec(stakhanov);
+})
+
+
+
+$("#minerai").on("click", function(){
+    nbminerai += nbprclick;
+    $nbminerai.html(reduire_decimale(nbminerai));
+    nbclicktotal += 1;
+    $nbclicktotal.html(nbclicktotal);
+    if (currentminerai === 1) {
+      nbcharbontotal += nbprclick;
+      $nbcharbontotal.html(reduire_decimale(nbcharbontotal));
+    } else if (currentminerai === 2) {
+      nbfertotal += nbprclick;
+      $nbfertotal.html(reduire_decimale(nbfertotal));
+    } else{
+      nbgoldtotal += nbprclick;
+      $nbgoldtotal.html(reduire_decimale(nbgoldtotal));
+    }
+});
+
+$("#buyminermieux").on("click", function(){
+  if(minermieux.prix <= nbminerai && currentminerai === 1){
+    $("#icons").hide();
+    $("body").css("overflow-y","hidden");
+    $changement_minerai.fadeIn(1500);
+    $up2.hide();
+    $up3.hide();
+    $up4.hide();
+    $up5.hide();
+    $up6.hide();
+    $up7.hide();
+    evolutionprix = 1.2;
+      $(".minerai").each(function(){
+        $(this).text(" fer");
+      });
+    $("#minerai").attr("src","./images/iron.png");
+    nbminerai = 0;
+    nbprclick = 1;
+    $nbprclick.html(nbprclick);
+    nbprsec = 0;
+    $nbprsec.html(nbprsec);
+
+    pioche.prix = pioche.prixbase*1.5;
+    pioche.$prix.html(reduire_decimale(pioche.prix));
+    pioche.nb = 0;
+    pioche.$nb.html("");
+
+    sac.prix = sac.prixbase*1.5;
+    sac.$prix.html(reduire_decimale(sac.prix));
+    sac.nb = 0;
+    sac.$nb.html("");
+
+    travailleur.prix = travailleur.prixbase*1.5;
+    travailleur.$prix.html(reduire_decimale(travailleur.prix));
+    travailleur.nb = 0;
+    travailleur.$nb.html("");
+
+    chariot.prix = chariot.prixbase*1.5;
+    chariot.$prix.html(reduire_decimale(chariot.prix));
+    chariot.nb = 0;
+    chariot.$nb.html("");
+
+    travailleur_s_c.prix = travailleur_s_c.prixbase*1.5;
+    travailleur_s_c.$prix.html(reduire_decimale(travailleur_s_c.prix));
+    travailleur_s_c.nb = 0;
+    travailleur_s_c.$nb.html("");
+
+    marteau_piqueur.prix = marteau_piqueur.prixbase*1.5;
+    marteau_piqueur.$prix.html(reduire_decimale(marteau_piqueur.prix));
+    marteau_piqueur.nb = 0;
+    marteau_piqueur.$nb.html("");
+
+    mine.prix = mine.prixbase*1.5;
+    mine.$prix.html(reduire_decimale(mine.prix));
+    mine.nb = 0;
+    mine.$nb.html("");
+
+    travailleur_p_c.prix = travailleur_p_c.prixbase*1.5;
+    travailleur_p_c.$prix.html(reduire_decimale(travailleur_p_c.prix));
+    travailleur_p_c.nb = 0;
+    travailleur_p_c.$nb.html("");
+
+    montagne.prix = montagne.prixbase*1.5;
+    montagne.$prix.html(reduire_decimale(montagne.prix));
+    montagne.nb = 0;
+    montagne.$nb.html("");
+
+    vallee.prix = vallee.prixbase*1.5;
+    vallee.$prix.html(reduire_decimale(vallee.prix));
+    vallee.nb = 0;
+    vallee.$nb.html("");
+
+    massif_montagneux.prix = massif_montagneux.prixbase*1.5;
+    massif_montagneux.$prix.html(reduire_decimale(massif_montagneux.prix));
+    massif_montagneux.nb = 0;
+    massif_montagneux.$nb.html("");
+
+    galaxie.prix = galaxie.prixbase*1.5;
+    galaxie.$prix.html(reduire_decimale(galaxie.prix));
+    galaxie.nb = 0;
+    galaxie.$nb.html("");
+
+    stakhanov.prix = stakhanov.prixbase*1.5;
+    stakhanov.$prix.html(reduire_decimale(stakhanov.prix));
+    stakhanov.nb = 0;
+    stakhanov.$nb.html("");
+
+    currentminerai = 2;
+    $("#minermieuxtexte").html("miner de l'or");
+    minermieux.prix = 100000000;
+    minermieux.$prix.html(reduire_decimale(minermieux.prix));
+    $changement_minerai.fadeOut(1500, function(){
+      $("#icons").show();
+      $("body").css("overflow-y","auto");
+    });
+  } else if (minermieux.prix <= nbminerai && currentminerai === 2){
+    $("#icons").hide();
+    $("body").css("overflow-y","hidden");
+    $changement_minerai.fadeIn(1500);
+    $up2.hide();
+    $up3.hide();
+    $up4.hide();
+    $up5.hide();
+    $up6.hide();
+    $up7.hide();
+    evolutionprix = 1.5;
+      $(".minerai").each(function(){
+        $(this).text(" minerais d'or");
+      });
+    $("#minerai").attr("src","./images/gold.png");
+    nbminerai = 0;
+    nbprclick = 1;
+    $nbprclick.html(nbprclick);
+    nbprsec = 0;
+    $nbprsec.html(nbprsec);
+
+    pioche.prix = pioche.prixbase*2;
+    pioche.$prix.html(reduire_decimale(pioche.prix));
+    pioche.nb = 0;
+    pioche.$nb.html("");
+
+    sac.prix = sac.prixbase*2;
+    sac.$prix.html(reduire_decimale(sac.prix));
+    sac.nb = 0;
+    sac.$nb.html("");
+
+    travailleur.prix = travailleur.prixbase*2;
+    travailleur.$prix.html(reduire_decimale(travailleur.prix));
+    travailleur.nb = 0;
+    travailleur.$nb.html("");
+
+    chariot.prix = chariot.prixbase*2;
+    chariot.$prix.html(reduire_decimale(chariot.prix));
+    chariot.nb = 0;
+    chariot.$nb.html("");
+
+    travailleur_s_c.prix = travailleur_s_c.prixbase*2;
+    travailleur_s_c.$prix.html(reduire_decimale(travailleur_s_c.prix));
+    travailleur_s_c.nb = 0;
+    travailleur_s_c.$nb.html("");
+
+    marteau_piqueur.prix = marteau_piqueur.prixbase*2;
+    marteau_piqueur.$prix.html(reduire_decimale(marteau_piqueur.prix));
+    marteau_piqueur.nb = 0;
+    marteau_piqueur.$nb.html("");
+
+    mine.prix = mine.prixbase*2;
+    mine.$prix.html(reduire_decimale(mine.prix));
+    mine.nb = 0;
+    mine.$nb.html("");
+
+    travailleur_p_c.prix = travailleur_p_c.prixbase*2;
+    travailleur_p_c.$prix.html(reduire_decimale(travailleur_p_c.prix));
+    travailleur_p_c.nb = 0;
+    travailleur_p_c.$nb.html("");
+
+    montagne.prix = montagne.prixbase*2;
+    montagne.$prix.html(reduire_decimale(montagne.prix));
+    montagne.nb = 0;
+    montagne.$nb.html("");
+
+    vallee.prix = vallee.prixbase*2;
+    vallee.$prix.html(reduire_decimale(vallee.prix));
+    vallee.nb = 0;
+    vallee.$nb.html("");
+
+    massif_montagneux.prix = massif_montagneux.prixbase*2;
+    massif_montagneux.$prix.html(reduire_decimale(massif_montagneux.prix));
+    massif_montagneux.nb = 0;
+    massif_montagneux.$nb.html("");
+
+    galaxie.prix = galaxie.prixbase*2;
+    galaxie.$prix.html(reduire_decimale(galaxie.prix));
+    galaxie.nb = 0;
+    galaxie.$nb.html("");
+
+    stakhanov.prix = stakhanov.prixbase*2;
+    stakhanov.$prix.html(reduire_decimale(stakhanov.prix));
+    stakhanov.nb = 0;
+    stakhanov.$nb.html("");
+
+    currentminerai = 3;
+    $("#minermieuxtexte").html("finir le jeu");
+    minermieux.prix = 100000000;
+    minermieux.$prix = "100M";
+    $changement_minerai.fadeOut(1500, function(){
+      $("#icons").show();
+      $("body").css("overflow-y","auto");
+    });
+  } else {
+    $("#fin_jeu").fadeIn(2000);
+    $("body").css("overflow-y","hidden");
+  }
+
+})
+
+$("#heure").html(heure+":"+minute);
+$("#stats").on("click",function(){
+  $("#heure").html(heure+":"+minute);
+})
+
+
+</script>
+</body>
+</html>

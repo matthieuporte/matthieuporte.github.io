@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matthieu Porte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://a405.idata.over-blog.com/300x219/4/69/54/12/classeur.gif" type="image/x-icon" />
+
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<!--polices-->
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Play" rel="stylesheet">
+	<!--amburgers-->
+	<link href="./hamburgers-master/dist/hamburgers.css" rel="stylesheet">
+<style>
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation color-change-5x
+ * ----------------------------------------
+ */
+@-webkit-keyframes color-change-5x {
+  0% {
+    background-color: #19dcea;
+  }
+  25% {
+    background-color: #b22cff;
+  }
+  50% {
+    background-color: #ea2222;
+  }
+  75% {
+    background-color: #f5be10;
+  }
+  100% {
+    background-color: #3bd80d;
+  }
+}
+@keyframes color-change-5x {
+  0% {
+    background-color: #19dcea;
+  }
+  25% {
+    background-color: #b22cff;
+  }
+  50% {
+    background-color: #ea2222;
+  }
+  75% {
+    background-color: #f5be10;
+  }
+  100% {
+    background-color: #3bd80d;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation jello-horizontal
+ * ----------------------------------------
+ */
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-blurred-left
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes slide-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-blurred-left {
+  0% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-blurred-left {
+  0% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+}
+
+
+
+body{
+	margin: 0;
+	width: 100vw;
+	overflow: hidden;
+	-webkit-animation: color-change-5x 2s linear infinite alternate both;
+	        animation: color-change-5x 2s linear infinite alternate both;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+hr{
+	margin:0;
+}
+.fiche-site{
+	background-color: black;
+	color: white;
+	height: 100%;
+	width: 100vw;
+	float: left;
+	z-index: 1;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	opacity:1;
+}
+#comming-soon{
+	width: 100vw;
+	margin-left: 0vw;
+	margin-right: 0vw;
+	opacity:1;
+}
+#acceuil{
+	background:none;
+	opacity:1;
+	padding-top: 15vh;
+}
+.container-fiches-sites{
+	height: 100vh;
+	width: 1000vw;
+
+
+
+
+
+	opacity: 0.9;
+
+
+
+
+
+	position: absolute;
+	font-family: 'Play', sans-serif;
+	cursor: default;
+}
+#titre{
+	font-size: 7em;
+}
+#titre:hover{
+	-webkit-animation: jello-horizontal 0.9s both;
+	        animation: jello-horizontal 0.9s both;
+}
+#sous-titre{
+	font-size: 5em;
+}
+.text-acceuil{
+	text-shadow: 2px 2px 4px black;
+	text-align: center;
+}
+.btnNav{
+	position: absolute;
+	top: 2vh;
+	left: 2vw;
+	font-size: 2em;
+	cursor: pointer;
+}
+#text-comming-soon{
+	font-size:4em;
+	font-family: 'Fjalla One', sans-serif;
+	text-align: center;
+}
+#indication-swipe{
+	width: 20%;
+	margin-top: 10%;
+}
+.titre-site{
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+	padding-top: 5vh;
+	padding-bottom: 1vh;
+}
+.titre-site:hover{
+	cursor: default;
+	-webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
+.img-site{
+	width: 100%;
+	float:left;
+	border: 1px 1px 1px 1px solid white;
+	padding-top: 3vh;
+}
+.description-image-site{
+	float: left;
+	padding-left: 5%;
+	width: 100%;
+	padding-top: 3vh;
+	font-size: large;
+}
+.contenu-fiche-site{
+	padding-left:20%;
+	padding-right:20%;
+}
+.tags-site{
+	float: left;
+	width: 100%;
+	padding-top: 5vh;
+}
+#menu{
+	width: 20vw;
+/*	left: -20vw;*/
+    -webkit-transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-500px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	background-color: black;
+}
+#menu:not(.out){
+	-webkit-animation: slide-out-blurred-left 0.3s cubic-bezier(0.755, 0.050, 0.855, 0.060) both ;
+	        animation: slide-out-blurred-left 0.3s cubic-bezier(0.755, 0.050, 0.855, 0.060) both ;
+}
+#menu.in{
+	/*left:0;*/
+	-webkit-animation: slide-in-blurred-left 0.3s cubic-bezier(0.755, 0.050, 0.855, 0.060) both ;
+	        animation: slide-in-blurred-left 0.3s cubic-bezier(0.755, 0.050, 0.855, 0.060) both ;
+}
+.hamburger-box{
+	color:#ffffff;
+}
+.hamburger-inner:before{
+	background-color:#fff;
+	box-shadow: 2px 2px 4px black;
+}
+.hamburger-inner{
+	background-color:#fff;
+	box-shadow: 2px 2px 4px black;
+}
+.hamburger-inner:after{
+	background-color:#fff;
+	box-shadow: 2px 2px 4px black;
+}
+
+.tags {
+  list-style: none;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+.tags li {
+  float: left;
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  cursor: pointer;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+.tag::after {
+  background: #000;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag >a{
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tag:hover >a{
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tag::before >a {
+  background: #fff;
+}
+.tag::after >a{
+  background: #000;
+}
+.tag-css:hover {
+  background-color: #4285f4;
+  color: white;
+}
+.tag-css:hover::after {
+   border-left-color: #4285f4;
+}
+.tag-javascript:hover {
+  background-color: #002561;
+  color: white;
+}
+.tag-javascript:hover::after {
+   border-left-color: #002561;
+}
+.tag-node:hover {
+  background-color: #44883e;
+  color: white;
+}
+.tag-node:hover::after {
+   border-left-color: #44883e;
+}
+.tag-jquery:hover {
+  background-color: #7acef4;
+  color: white;
+}
+.tag-jquery:hover::after {
+   border-left-color: #7acef4;
+}
+.tag-html:hover {
+  background-color: #E87E04;
+  color: white;
+}
+.tag-html:hover::after {
+   border-left-color: #E87E04;
+}
+.tag-tips:hover {
+  background-color: #6e5494;
+  color: white;
+}
+.tag-tips:hover::after {
+   border-left-color: #6e5494;
+}
+.tag-jeux:hover {
+  background-color: #ea4335;
+  color: white;
+}
+.tag-jeux:hover::after {
+   border-left-color: #ea4335;
+}
+button:focus{
+    outline: none;
+}
+button:active{
+    outline: none;
+}
+#presentation{
+	margin-top: 90px;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-size: large;
+}
+@media (max-width: 600px){
+	#indication-swipe{
+		width: 40%;
+	}
+	#titre{
+		font-size: 6em;
+	}
+	#sous-titre{
+		font-size: 3em;
+	}
+	.description-image-site{
+		font-size: small;
+	}
+	#menu{
+		width: 100vw;
+	}
+	.titre-site{
+		font-size: 1.5em;
+	}
+	.contenu-fiche-site{
+		padding-left:10%;
+		padding-right:10%;
+	}
+}
+@media (max-width: 1000px) and (min-width: 600px) {
+	#menu{
+		width: 45vw;
+	}
+}
+@media (max-height: 500px){
+	#indication-swipe{
+		margin-top: 5%;
+	}
+	.description-image-site{
+		font-size: small;
+	}
+}
+</style>
+</head>
+<body>
+<div id="main">
+	<div class="container-fiches-sites">
+		<div class="fiche-site" id="acceuil">
+			<div id="menu" class="out">
+				<div id="presentation">
+					Bienvenue dans mon Portfolio. Je programme en html/css/js depuis l'automne 2016 et je me suis d&eacute;cid&eacute; à faire un r&eacute;sum&eacute; de ce que j'avais fait durant ces ann&eacute;es. Certains sites ne sont pas aboutis, d'autres contiennent quelques bugs mais ils valent tous la peine d'être regard&eacute;s. Tr&eacute;ve de Bla-Bla inutile, Bonne d&eacute;couverte !
+				</div>
+			</div>
+			<div class="text-acceuil">
+				<button class="hamburger hamburger--emphatic btnNav" id="toggleNav">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<div id="titre">DEV;</div>
+				<div id="sous-titre">Matthieu Porte</div>
+				<img id="indication-swipe" src="https://thumbs.gfycat.com/PhonyWealthyEastrussiancoursinghounds-size_restricted.gif"/>
+			</div>
+		</div>
+		<div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;Tchatosphere&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/no-image.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">Bienvenue sur la Tchatosphere, un site totalement libre d'acces pour y discuter avec qui s'y trouvera ! Profitez d'incroyables fonctionalités telles que : envoyer des messages ! [...] Bon ok j'ai pas vraiment d'arguments a part le fait que ce soit mon premier site en "back-end". Allez y jeter un petit coup d'oeil !<br>
+						<a href="http://tchatosphere.cloudno.de/" target="_blank">http://tchatosphere.cloudno.de/</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-node"><a href="https://nodejs.org/fr/" target="_blank">Node.JS</a></li>
+					  <li class="tag tag-jquery"><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+					  <li class="tag tag-javascript"><a href="https://developer.mozilla.org/fr/docs/Glossaire/JavaScript" target="_blank">JavaScript</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;Nama&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/Nama.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">Nama est des sites dont je suis le plus fier . C'est une histoire int&eacute;ractive ou vous choisissez le suite. J'ai utilis&eacute; la biblioth&eacute;que de Javascript jQuery pour la r&eacute;aliser. Je vous conseille vivement d'y jeter un coup d'oeil !<br>
+						<a href="http://nama.rf.gd" target="_blank">http://nama.rf.gd</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-jquery"><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+					  <li class="tag tag-jeux"><a href="" target="_blank">Histoire Interactive</a></li>
+					  <li class="tag tag-html"><a href="https://developer.mozilla.org/fr/Apprendre/HTML" target="_blank">HTML</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;Cliker 2&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/clicker2.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">Voici mon deuxieme clicker, plusieurs personnes mon demand&eacute; d'en sortir une V2 avec plus de contenu, un plus beau design ext. Chose promise, chose due, il est tout neuf et jetez-y un oeil !<br>
+						<a href="https://matthieuporte.github.io/clicker2.html" target="_blank">jouer au jeu</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-jeux"><a href="" target="_blank">Clicker</a></li>
+					  <li class="tag tag-javascript"><a href="https://developer.mozilla.org/fr/docs/Glossaire/JavaScript" target="_blank">JavaScript</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;Html Time&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/htmltime-acceuil.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">Html Time est un site où je publie des astuces sur des difficult&eacute;s (plus ou moins grandes) auxquelles j'ai d&eacute;ja &eacute;t&eacute; confront&eacute;es. J'y explique comment j'ai fait Nama par exemple, mais j'y traite plein d'autres sujets.<br>
+						<a href="http://htmltime.rf.gd" target="_blank">http://htmltime.rf.gd</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-tips"><a href="" target="_blank">Tips</a></li>
+					  <li class="tag tag-html"><a href="https://developer.mozilla.org/fr/Apprendre/HTML" target="_blank">HTML</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;D&eacute;lirious&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/delirious.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">D&eacute;lirious est mon premier site ou j'utilisais vraiment le JavaScript (plus pr&eacute;scis&eacute;ment l'API DOM). C'est aussi pour ce site que j'ai d&eacute;couvert Bootstrap. En gros, c'est une histoire ou vous pouvez modifier des donn&eacute;es. C'est assez simple mais c'est quand même amusant.<br>
+						<a href="http://delirious.rf.gd" target="_blank">http://delirious.rf.gd</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-javascript"><a href="https://developer.mozilla.org/fr/docs/Glossaire/JavaScript" target="_blank">JavaScript</a></li>
+					  <li class="tag tag-jeux"><a href="" target="_blank">Histoire semi-al&eacute;atoire</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fiche-site" id="comming-soon"><span id="text-comming-soon">comming soon...</span></div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+<script>
+var $menu = $("#menu");
+var MenuOpen = 0;
+var $openNav = $("#openNav");
+var $titresSites = $(".titre-site-text");
+var $closeNav = $("#closeNav");
+var $toggleNav = $("#toggleNav");
+var $bloc = $(".container-fiches-sites");
+var nbFiches = $(".fiche-site").length;
+var taille_container_fiches_sites = nbFiches*100+"vw";
+$(".container-fiches-sites").css("width",taille_container_fiches_sites);
+var position = nbFiches;
+var xMove = "100vw";
+$($closeNav).hide();
+
+
+var backgroundsPC = ["mars-pc","glacier-pc","route_yoshi","foret-neige-pc","ile-pc"];
+var backgroundsMobile = ["glacier-mobile","colorado-mobile","aurore-mobile","arbre_homme_seul"];
+if(window.innerWidth>680) {
+	var randomBackground = Math.floor((Math.random() * backgroundsPC.length));
+	var backgroundActuel = backgroundsPC[randomBackground];
+}else if(window.innerWidth<680){
+	var randomBackground = Math.floor((Math.random() * backgroundsMobile.length));
+	var backgroundActuel = backgroundsMobile[randomBackground];
+}
+
+function changeBackground(bElement, bUrl) {
+       return bElement.style.backgroundImage = "url("+bUrl+")";
+}
+changeBackground(document.body, "./images/backgrounds/" + backgroundActuel + ".jpg");
+
+
+// background-image: url("./images/mars-pc.jpg");
+function GoLeft() {
+	if (position > 1) {
+		$($bloc).animate({ left: "-=" + xMove},"fast","swing");
+		position--;
+	}
+}
+function GoRight() {
+	if (position < nbFiches) {
+		$($bloc).animate({ left: "+=" + xMove},"fast","swing");
+		position++;
+	}
+}
+
+$(window).on( "swipeleft" , function(){
+	GoLeft();
+	$($menu).removeClass("in");
+    $($toggleNav).removeClass("is-active");
+});
+$(window).on( "swiperight", function(){
+	GoRight();
+});
+
+$($toggleNav).click(function(){
+    $($menu).toggleClass("in").removeClass('out');
+    $($toggleNav).toggleClass("is-active");
+});
+
+var offset = $("body").offset().top
+$('html, body').animate({scrollTop: offset}, 'slow');
+</script>
+</body>
+</html>
+
+<!-- <div class="fiche-site">
+			<div class="contenu-fiche-site">
+				<div class="titre-site">&lt;&nbsp;TITRE&nbsp;&sol;&gt;</div>
+				<hr>
+				<div class="row">
+			        <div class="col-md-8">
+			        	<img class="img-site" src="./images/IMAGE.png"/>
+			        </div>
+			        <div class="col-md-4">
+			        	<div class="description-image-site">DESCRIPTION<br>
+						<a href="LIEN_SITE" target="_blank">LIEN_SITE</a></div>
+			        </div>
+			    </div>
+				<ul class="tags-site tags">
+					  <li class="tag tag-html"><a href="">HTML</a></li>
+					  <li class="tag tag-css"><a href="https://developer.mozilla.org/fr/docs/Web/CSS">CSS</a></li>
+					  <li class="tag tag-javascript"><a href="">JavaScript</a></li>
+				</ul>
+			</div>
+		</div> -->

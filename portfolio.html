@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://a405.idata.over-blog.com/300x219/4/69/54/12/classeur.gif" type="image/x-icon" />
+
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!--police d'&eacute;criture-->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Roboto" rel="stylesheet">
+    <!--fonts-awesome-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+<style>
+body{
+	overflow-x: hidden;
+}
+#infos{
+	background-color: black;
+	position: fixed;
+	width: 66px;
+	height: 100%;
+	transition: width ease-out 0.4s;
+	z-index: 2;
+	-o-transition: width ease-out 0.4s 0.4s; /* opera */
+    -ms-transition: width ease-out 0.4s 0.4s; /* IE 10 */
+    -moz-transition: width ease-out 0.4s 0.4s; /* Firefox */
+    -webkit-transition: width ease-out 0.4s 0.4s; /*safari and chrome */
+}
+#infos:hover{
+	width: 266px;
+	transition: width ease-out 0.4s;
+	-o-transition: width ease-out 0.4s; /* opera */
+    -ms-transition: width ease-out 0.4s; /* IE 10 */
+    -moz-transition: width ease-out 0.4s; /* Firefox */
+    -webkit-transition: width ease-out 0.4s; /*safari and chrome */
+}
+#infos:hover > #visage{
+	margin-left:83px;
+	transition: margin-left ease-out 0.4s;
+	-o-transition: margin-left ease-out 0.4s; /* opera */
+    -ms-transition: margin-left ease-out 0.4s; /* IE 10 */
+    -moz-transition: margin-left ease-out 0.4s; /* Firefox */
+    -webkit-transition: margin-left ease-out 0.4s; /*safari and chrome */
+}
+#visage{
+	margin-top:70px;
+	margin-left:15px;
+	border-radius: 100px;
+	transition: margin-left ease-out 0.4s 0.4s;
+	-o-transition: margin-left ease-out 0.4s 0.4s; /* opera */
+    -ms-transition: margin-left ease-out 0.4s 0.4s; /* IE 10 */
+    -moz-transition: margin-left ease-out 0.4s 0.4s; /* Firefox */
+    -webkit-transition: margin-left ease-out 0.4s 0.4s; /*safari and chrome */
+}
+#description{
+	color:white;
+	opacity: 0;
+	padding-right: 40px;
+	padding-top: 60px;
+	margin-left:10px;
+	line-height: 3em;
+	font-family: 'Exo 2', sans-serif;
+	transition: opacity ease-out 0.2s, margin-left ease-out 0.4s 0.4s;
+	-o-transition: opacity ease-out 0.2s, margin-left ease-out 0.4s 0.4s; /* opera */
+    -ms-transition: opacity ease-out 0.2s, margin-left ease-out 0.4s 0.4s; /* IE 10 */
+    -moz-transition: opacity ease-out 0.2s, margin-left ease-out 0.4s 0.4s; /* Firefox */
+    -webkit-transition: opacity ease-out 0.2s, margin-left ease-out 0.4s 0.4s; /*safari and chrome */
+}
+#infos:hover > #description{
+	opacity:1;
+	margin-left:50px;
+	transition: opacity ease-out 0.4s 0.4s, margin-left ease-out 0.4s;
+	-o-transition: opacity ease-out 0.4s 0.4s, margin-left ease-out 0.4s; /* opera */
+    -ms-transition: opacity ease-out 0.4s 0.4s, margin-left ease-out 0.4s; /* IE 10 */
+    -moz-transition: opacity ease-out 0.4s 0.4s, margin-left ease-out 0.4s; /* Firefox */
+    -webkit-transition: opacity ease-out 0.4s 0.4s, margin-left ease-out 0.4s; /*safari and chrome */
+}
+.contenu{
+	padding-left: 66px;
+}
+.gauche > .img-site{
+	width: 60%;
+	float: left;
+}
+.droite > .img-site{
+	width: 60%;
+	float: right;
+}
+.droite{
+	text-align: right;
+}
+.img-site{
+	margin-left:10px;
+	margin-right:10px;
+	border:1px #95A5A6 solid;
+}
+.img-baniere{
+	width: 100%;
+}
+.img-baniere:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.texte{
+	font-size: large;
+	font-family: 'Roboto', sans-serif;
+}
+.a{
+	color: white;
+	text-decoration: none;
+}
+.a:focus{
+color: white;
+text-decoration: none;
+}
+.a:hover{
+color: white;
+text-decoration: none;
+}
+.a:active{
+color: white;
+text-decoration: none;
+}
+.a:link{
+	color: white;
+	text-decoration: none;
+}
+@media (max-width: 1100px) {
+	#infos{
+		display: none;
+	}
+	.contenu{
+		padding-left: 15px;
+	}
+	.tonneaux{
+		display: none;
+	}
+}
+
+.img-site-responsive{
+	width: 100%;
+	display: none;
+}
+.site-description{
+	margin-bottom: 200px;
+}
+.description-responsive{
+	display: none;
+}
+@media (max-width: 1000px) {
+	.img-site-responsive{
+		display: block;
+		border:1px gray solid;
+	}
+	.img-site{
+		display: none;
+	}
+	.site-description{
+		margin-bottom: 50px;
+	}
+}
+@media (max-width: 1100px) {
+	.description-responsive{
+		display: block;
+		font-size: large;
+	}
+}
+@media (max-width: 1300px) and (min-width: 1200px) {
+	.contenu{
+		padding-left: 100px;
+	}
+}
+@media (max-width: 1200px) and (min-width: 1000px) {
+	.site-description{
+		margin-bottom: 100px;
+	}
+}
+@media (max-height: 800px){
+	#description{
+		line-height: 2.5em;
+	}
+}
+
+@media (max-height: 700px){
+	#description{
+		line-height: 2em;
+	}
+}
+hr{
+	border-top: 1px solid black ;
+	opacity: 0.3;
+}
+.col-md-4{
+	margin-top: 10px;
+}
+</style>
+</head>
+<body class="scrollbar-inner">
+	<div id="infos">
+		<img src="./images/moi-visage.jpg" width="100px" id="visage">
+		<p id="description">
+		Bienvenue dans mon Portfolio. Je programme en html/css/js depuis l'automne 2016 et je me suis d&eacute;cid&eacute; à faire un r&eacute;sum&eacute; de ce que j'avais fait durant cette ann&eacute;e. Certains sites ne sont pas aboutis, d'autres contiennent quelques bugs mais ils valent tous la peine d'être regard&eacute;s. Tr&eacute;ve de Bla-Bla inutile, Bonne d&eacute;couverte !
+		</p>
+	</div>
+<div id="body">
+	<div class="container contenu">
+		<h1>Portfolio</h1><br class="description-responsive">
+		<p class="description-responsive">
+			Bienvenue dans mon Portfolio. Je programme en html/css/js depuis l'automne 2016 et je me suis d&eacute;cid&eacute; à faire un r&eacute;sum&eacute; de ce que j'avais fait durant cette ann&eacute;e. Certains sites ne sont pas aboutis, d'autres contiennent quelques bugs mais ils valent tous la peine d'être regard&eacute;s. Tr&eacute;ve de Bla-Bla inutile, Bonne d&eacute;couverte !
+		</p><br class="description-responsive"><hr><br>
+	<div class="row">
+        <div class="col-md-4"><a href="#tchatosphere"><img src="./images/tchat_banniere.png" class="img-baniere"></img></a></div>
+        <div class="col-md-4"><a href="#nama"><img src="./images/nama-baniere.png" class="img-baniere"></img></a></div>
+        <div class="col-md-4"><a href="#clicker2"><img src="./images/clicker-deux.png" class="img-baniere"></img></a></div>
+      </div>
+
+      	<hr>
+		<div class="gauche site-description">
+		<img src="./images/tchat_banniere.png" class="img-site"></img>
+		<h2 id="tchatosphere">Tchatosphere</h2>
+			<p class="texte">Bienvenue sur la Tchatosphere, un site totalement libre d'acces pour y discuter avec qui s'y trouvera ! Profitez d'incroyables fonctionalités telles que : envoyer des messages ! [...] Bon ok j'ai pas vraiment d'arguments a part le fait que ce soit mon premier site en "back-end". Allez y jeter un petit coup d'oeil !<br>
+			<a href="http://tchatosphere.cloudno.de/" target="_blank">http://tchatosphere.cloudno.de/</a></p>
+			<img src="./images/no-image.png" class="img-site-responsive"></img>
+		</div>
+
+      	<hr>
+		<div class="droite site-description">
+		<img src="./images/Nama.png" class="img-site"></img>
+		<h2 id="nama">Nama</h2>
+			<p class="texte">Nama est le site dont je suis le plus fier jusqu'à pr&eacute;sent. C'est une histoire int&eacute;ractive ou vous choisissez le suite. J'ai utilis&eacute; la biblioth&eacute;que de Javascript jQuery pour la r&eacute;aliser. Je vous conseille vivement d'y jeter un coup d'oeil !<br>
+			<a href="http://nama.rf.gd" target="_blank">http://nama.rf.gd</a></p>
+			<img src="./images/Nama.png" class="img-site-responsive"></img>
+		</div>
+
+		<hr>
+		<div class="gauche site-description">
+		<img src="./images/clicker2.png" class="img-site"></img>
+		<h2 id="clicker2">Clicker 2</h2>
+			<p class="texte">Voici mon deuxieme clicker, plusieurs personnes mon demand&eacute; d'en sortir une V2 avec plus de contenu, un plus beau design ext. Chose promise, chose due, il est tout neuf et jetez-y un oeil !<br>
+			<a href="https://matthieuporte.github.io/clicker2.html" target="_blank">jouer au jeu</a></p>
+			<img src="./images/clicker2.png" class="img-site-responsive"></img>
+		</div>
+
+		<hr>
+		<div class="droite site-description">
+		<img src="./images/htmltime-acceuil.png" class="img-site"></img>
+		<h2 id="htmltime">Html Time</h2>
+			<p class="texte">Html Time est mon dernier site avant ce portfolio. C'est un site où je publie des astuces sur des difficult&eacute;s (plus ou moins grandes) auxquelles j'ai d&eacute;ja &eacute;t&eacute; confront&eacute;es. J'y explique comment j'ai fait <a href="#nama">Nama</a> par exemple, mais j'y traite plein d'autres sujets.<br>
+			<a href="http://htmltime.rf.gd" target="_blank">http://htmltime.rf.gd</a></p>
+			<img src="./images/htmltime-acceuil.png" class="img-site-responsive"></img>
+		</div>
+
+		<hr>
+		<div class="gauche site-description">
+		<img src="./images/delirious.png" class="img-site"></img>
+		<h2 id="delirious">D&eacute;lirious</h2>
+			<p class="texte">D&eacute;lirious est mon premier site ou j'utilisais vraiment le JavaScript (plus pr&eacute;scis&eacute;ment l'API DOM). C'est aussi pour ce site que j'ai d&eacute;couvert Bootstrap. En gros, c'est une histoire ou vous pouvez modifier des donn&eacute;es. C'est assez simple mais c'est quand même amusant.<br>
+			<a href="http://delirious.rf.gd" target="_blank">http://delirious.rf.gd</a></p>
+			<img src="./images/delirious.png" class="img-site-responsive"></img>
+		</div>
+
+
+		<hr>
+		<div class="droite site-description">
+		<img src="./images/clicker.png" class="img-site"></img>
+		<h2 id="Clicker">Clicker</h2>
+			<p class="texte">Clicker est un jeu que j'ai fait un soir où je m'ennuyais. Le principe est de cliquer sur le tonneau pour gagner de nouveaux tonneaux, puis acheter des am&eacute;liorations pour avoir de plus en plus de tonneaux par click, etc. <br><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Il n'est malheuresement pas encore responsive.<br>
+			<a href="https://matthieuporte.github.io/clicker.html" target="_blank" class="tonneaux">https://matthieuporte.github.io/clicker.html</a></p>
+			<img src="./images/clicker.png" class="img-site-responsive"></img>
+		</div>
+
+		<hr>
+		<a href="#body">retour en haut</p><br><br>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+$('a[href^="#"]').click(function(){
+    var id = $(this).attr("href");
+    var offset = $(id).offset().top
+    $('html, body').animate({scrollTop: offset - 100}, 'slow');
+    return false;
+});
+</script>
+</body>
+</html>

@@ -411,6 +411,14 @@
     suffleString("Matthieu Porte","#nom",20);
     suffleString("Developeur Front-end depuis 2 ans et débutant en Back-end, je sais aussi programmer des jeux en 3D","#text_description",40);
 
+
+    $(window).scroll(function () { 
+
+       $('.titre').css({
+          'bottom' : -($(this).scrollTop()/3)+"px"
+       }); 
+
+    });
   </script>
   </body>
 </html>

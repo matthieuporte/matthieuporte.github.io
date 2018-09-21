@@ -13,6 +13,9 @@
       .titre{
         padding-bottom: 130px;
       }
+      #nom, #text_description{
+        color: white;
+      }
       .content{
         text-align: justify;
         text-justify: inter-word;
@@ -82,6 +85,16 @@
       .description-responsive{
         display: none;
       }
+      .acceuilPortfolio{
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+          ),url('./images/bg-home.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       @media (max-width : 1024px){
         .presentation{
           display: none;
@@ -112,27 +125,26 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
   <body>
-    <section class="hero is-fullheight">
+    <section class="hero is-fullheight acceuilPortfolio">
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item" href="#presentation">
-                  A propos de moi
-                </a>
-                <a class="navbar-item" href="#projets">
-                  Mes projets
-                </a>
-                <a class="navbar-item"  href="#contact">
-                  Contact
-                </a>
                 <span class="navbar-item">
                   <a class="button is-light" href="https://github.com/matthieuporte" target="_blank">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Github</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
+                  <a class="button is-light" href="https://www.instagram.com/matthieu_porte/" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-instagram"></i>
+                    </span>
+                    <span>Instagram</span>
                   </a>
                 </span>
               </div>

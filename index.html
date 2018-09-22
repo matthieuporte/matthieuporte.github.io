@@ -6,10 +6,10 @@
     <link rel="shortcut icon" href="./images/avatarAbstrait.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
     <title>Matthieu Porte</title>
     <style>
-      body{
-      }
       .titre{
         padding-bottom: 130px;
       }
@@ -129,6 +129,42 @@
           width: 400px;
         }
       }
+
+      .slick-slide {
+        margin: 0px 20px;
+      }
+
+      .slick-slide img {
+        width: 100%;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: black;
+      }
+
+      .slick-slide {
+        transition: all ease-in-out .3s;
+        opacity: .2;
+      }
+      
+      .slick-active {
+        opacity: .5;
+      }
+
+      .slick-current {
+        opacity: 1;
+      }
+      .card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        cursor: pointer;
+      }
+      .titre-card{
+        font-weight: bold;
+      }
     </style>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -207,7 +243,7 @@
     </section>
     <section class="hero is-medium">
       <div class="hero-head">
-        <h1 class="title has-text-centered section-titre">
+        <h1 class="title has-text-centered section-titre" id="competences-type">
           Mes competences
         </h1>
       </div>
@@ -337,6 +373,72 @@
         </div>
       </div>
     </section>
+    <section class="hero" id="discover">
+      <div class="hero-head">
+        <h1 class="title has-text-centered section-titre">
+          Amis d&eacute;veloppeurs :
+        </h1>
+        <br><br>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <section class="center slider">
+            <div>
+              <a href="https://jordanbmrd.github.io" target="_blank">
+              <div class="card">
+                <img src="./images/jordan-avatar.png" class="img-card" >
+                <h3 class="titre-card">Jordan Baumard</h3>
+                <p class="text-card">Web developer</p>
+              </div>
+              </a>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://cdn.discordapp.com/avatars/325327682378399749/143ffa8570ba17b936ed2d014d212358.png" class="img-card" >
+                <h3 class="titre-card">Marius Coudray</h3>
+                <p class="text-card">Software developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://cdn.discordapp.com/avatars/353553285279645710/7c61a260bd29e0a16d6a96e64dff0f47.png" class="img-card" >
+                <h3 class="titre-card">Mathis Perot</h3>
+                <p class="text-card">Game developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://cdn.discordapp.com/avatars/315852341620244491/0da375038f475696c37ea9cefbe3073f.png" class="img-card" >
+                <h3 class="titre-card">Paul Mairesse</h3>
+                <p class="text-card">Game developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://scontent-cdg2-1.cdninstagram.com/vp/49ba5623cd6340f42d5d0ae9528494ae/5C41E8A9/t51.2885-19/s150x150/41144300_920336014824086_2842902182515179520_n.jpg" class="img-card" >
+                <h3 class="titre-card">Martin Vibert</h3>
+                <p class="text-card">Android developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <a href="https://www.neuralia.co/" target="_blank">
+              <div class="card">
+                <img src="https://www.neuralia.co/images/vincent_porte.jpg" class="img-card" >
+                <h3 class="titre-card">Vincent Porte</h3>
+                <p class="text-card">AI guru</p>
+              </div>
+              </a>
+              <br>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
     <section class="hero" id="contact">
       <div class="hero-body">
         <div class="container">
@@ -356,8 +458,9 @@
         </figure>
       </div>
     </section>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
   <script>
     AOS.init();
 
@@ -422,12 +525,42 @@
 
 
     $(window).scroll(function () { 
-
+      console.log()
        $('.titre').css({
           'bottom' : -($(this).scrollTop()/3)+"px"
        }); 
 
     });
+
+      $(".center").slick({
+        centerMode: true,
+        infinite: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
   </script>
   </body>
 </html>

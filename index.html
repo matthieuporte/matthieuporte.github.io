@@ -98,6 +98,18 @@
       .is-rounded{
         border-radius: 10px !important;
       }
+      @media (max-width: 400px){
+        .hero-image {
+          height: 200px !important;
+        }
+
+      }
+      @media (max-width: 740px){
+        .hero-image {
+          height: 400px ;
+        }
+
+      }
       @media (max-width : 1024px){
         .presentation{
           display: none;
@@ -107,6 +119,14 @@
               rgba(0, 0, 0, 0.5), 
               rgba(0, 0, 0, 0.5)
             ),url();
+        }
+        .hero-image {
+          width:100%;
+          height: 350px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
         }
         .section-titre{
           padding-bottom: 30px;
@@ -127,6 +147,9 @@
           top: 84vh;
           left: 60vw;
           width: 400px;
+        }
+        #text{
+            font-size: 20px !important;
         }
       }
 
@@ -167,6 +190,31 @@
       }
       .white{
         color: white !important;
+      }
+      #overlay {
+          position: fixed;
+          display: none;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.85);
+          z-index: 20;
+          cursor: pointer;
+      }
+      .is-4{
+        cursor: pointer;
+      }
+      #text{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 50px;
+          color: white;
+          transform: translate(-50%,-50%);
+          -ms-transform: translate(-50%,-50%);
       }
     </style>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
@@ -311,17 +359,17 @@
         <br><br>
       </div>
       <div class="columns is-gapless colonne-projets">
-        <div class="column is-4">
+        <div class="column is-4" id="shar">
           <div class="hero-image" style="background-image : url('./images/shar.png')">
             <div class="hero-text noDisplay">
-              <h1 class="titre-projet">&lt;Shar/&gt;</h1>
+              <h1 class="titre-projet">Shar</h1>
               <p class="contenu-projet">Shar est un reseau social, où vous pourrez partager votre passion, vos créations et rejoindre vos amis en vous inscrivant gratuitement ! </p>
               <br>
-              <a class="button is-outlined is-inverted is-info " href="http://tchatosphere.cloudno.de/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>
+              <a class="button is-outlined is-inverted is-info " href="http://35.180.152.234" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
-        <div class="column is-4">
+        <div class="column is-4" id="lowlib">
           <div class="hero-image" style="background-image : url('./images/lowPolyLibDemo.png')">
             <div class="hero-text noDisplay">
               <h1 class="titre-projet">LowLib</h1>
@@ -331,7 +379,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-4">
+        <div class="column is-4" id="spyadv">
           <div class="hero-image" style="background-image : url('./images/SpyAdv_ban.jpg')">
             <div class="hero-text noDisplay">
               <h1 class="titre-projet">SpyAdv</h1>
@@ -344,7 +392,7 @@
         </div>
       </div>
       <div class="columns is-gapless colonne-projets">
-        <div class="column is-4">
+        <div class="column is-4" id="tchatosphere">
           <div class="hero-image" style="background-image : url('./images/tchat_banniere.png')">
             <div class="hero-text noDisplay">
               <h1 class="titre-projet">Tchatosphere</h1>
@@ -354,7 +402,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-4">
+        <div class="column is-4" id="nama">
           <div class="hero-image" style="background-image : url('./images/nama-baniere.png')">
             <div class="hero-text noDisplay">
               <h1 class="titre-projet">Nama</h1>
@@ -364,7 +412,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-4">
+        <div class="column is-4" id="clicker2">
           <div class="hero-image" style="background-image : url('./images/clicker-deux.png')">
             <div class="hero-text noDisplay">
               <h1 class="titre-projet">Clicker 2</h1>
@@ -463,6 +511,9 @@
       <div class="hero-body">
       </div>
     </section>
+  <div id="overlay">
+    <div id="text"></div>
+  </div> 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
@@ -477,13 +528,6 @@
             $(this).removeClass("filtre-projet");
             $(this).children(":first").addClass("noDisplay");
       });
-        $(".hero-image").click(function(){
-            $(this).addClass("filtre-projet");
-            $(this).children(":first").removeClass("noDisplay");
-            }, function(){
-              $(this).removeClass("filtre-projet");
-              $(this).children(":first").addClass("noDisplay");
-        });
     });
 
     $('a[href^="#"]').click(function(){
@@ -566,6 +610,24 @@
           }
         ]
       });
+
+    function overlay(id,contenu) {
+      $(id).on("click",function(){
+        $("#text").html(contenu);
+        $("#overlay").css("display", "block");
+      })
+    }
+
+    $("#overlay").on("click",function(){
+       $("#overlay").css("display", "none");
+    });
+
+    overlay("#shar",'<h1 class="titre-projet">&lt;Shar/&gt;</h1><p>Shar est un reseau social, où vous pourrez partager votre passion, vos créations et rejoindre vos amis en vous inscrivant gratuitement ! </p><br><a class="button is-outlined is-inverted is-info " href="http://35.180.152.234" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#lowlib",'<h1 class="titre-projet">LowLib</h1><p>LowLib est une bibliotheque de models 3D gratuite créée par mes soins a l\'aide du logiciel Blender.</p><br><a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/tsaxe96dqma9lr4/lowlib.zip/file" target="_blank">Telecharger la bibliotheque&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>');
+    overlay("#spyadv",'<h1 class="titre-projet">SpyAdv</h1><p>SpyAdv est mon premier jeu avec Unity3D. C\'est un FPS où vous devrez survivre a une invasion de zombies.</p><br><a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/9c98ymhu6cd7wjb/SpyAdvFini.zip/file" target="_blank">Telecharger le jeu&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>');
+    overlay("#tchatosphere",'<h1 class="titre-projet">Tchatosphere</h1><p>La Tchatosphere est un site totalement libre d\'acces où vous pourrer y discuter avec qui s\'y trouvera !</p><br><a class="button is-outlined is-inverted is-info " href="http://tchatosphere.cloudno.de/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#nama",'<h1 class="titre-projet">Nama</h1><p>Nama est une histoire interactive ou vous serez confrontés a des choix qui déterminerons votre aventure.</p><br><a class="button is-outlined is-inverted is-info " href="http://nama.rf.gd/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#clicker2",'<h1 class="titre-projet">Clicker 2;</h1><p>Clicker 2 est un jeu tres adictif où le principe est de cliquer sur un minerai pour gagner de nouveaux minerais, puis acheter des améliorations pour avoir de plus en plus de minerais etc.</p><br><a class="button is-outlined is-inverted is-info " href="https://matthieuporte.github.io/clicker2.html" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
   </script>
   </body>
 </html>

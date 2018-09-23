@@ -116,8 +116,8 @@
         }
         .acceuilPortfolio{
           background: linear-gradient(
-              rgba(0, 0, 0, 0.5), 
-              rgba(0, 0, 0, 0.5)
+              rgba(128, 79, 144, 0.5), 
+              rgba(128, 79, 144, 0.5)
             ),url();
         }
         .hero-image {
@@ -150,6 +150,7 @@
         }
         #text{
             font-size: 20px !important;
+            width: 90%;
         }
       }
 
@@ -213,6 +214,7 @@
           left: 50%;
           font-size: 50px;
           color: white;
+          width: 60%;
           transform: translate(-50%,-50%);
           -ms-transform: translate(-50%,-50%);
       }
@@ -500,8 +502,8 @@
           </h1>
           <h2 class="subtitle">
             <br>
-            &nbsp;<a href="https://www.instagram.com/matthieu_porte/" target="_blank" data-aos="zoom-in" data-aos-offset="0"><i class="fab fa-instagram fa-3x white"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.facebook.com/matthieu.etrop" target="_blank" data-aos="zoom-in" data-aos-offset="0"><i class="fab fa-facebook fa-3x white"></i></a>
+            &nbsp;<a href="https://www.instagram.com/matthieu_porte/" target="_blank"><i class="fab fa-instagram fa-3x white"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.facebook.com/matthieu.etrop" target="_blank"><i class="fab fa-facebook fa-3x white"></i></a>
           </h2>
         <figure class="image is-128x128 signature">
           <img class="is-rounded" src="./images/signature_animated.svg">
@@ -521,14 +523,16 @@
     AOS.init();
 
     $( document ).ready(function() {
-      $(".hero-image").hover(function(){
-          $(this).addClass("filtre-projet");
-          $(this).children(":first").removeClass("noDisplay");
-          }, function(){
-            $(this).removeClass("filtre-projet");
-            $(this).children(":first").addClass("noDisplay");
-      });
-    });
+      console.log($(window).width());
+      if($(window).width() > 1200){
+        $(".hero-image").hover(function(){
+            $(this).addClass("filtre-projet");
+            $(this).children(":first").removeClass("noDisplay");
+            }, function(){
+              $(this).removeClass("filtre-projet");
+              $(this).children(":first").addClass("noDisplay");
+        });
+      }
 
     $('a[href^="#"]').click(function(){
         var id = $(this).attr("href");
@@ -628,6 +632,9 @@
     overlay("#tchatosphere",'<h1 class="titre-projet">Tchatosphere</h1><p>La Tchatosphere est un site totalement libre d\'acces où vous pourrer y discuter avec qui s\'y trouvera !</p><br><a class="button is-outlined is-inverted is-info " href="http://tchatosphere.cloudno.de/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
     overlay("#nama",'<h1 class="titre-projet">Nama</h1><p>Nama est une histoire interactive ou vous serez confrontés a des choix qui déterminerons votre aventure.</p><br><a class="button is-outlined is-inverted is-info " href="http://nama.rf.gd/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
     overlay("#clicker2",'<h1 class="titre-projet">Clicker 2;</h1><p>Clicker 2 est un jeu tres adictif où le principe est de cliquer sur un minerai pour gagner de nouveaux minerais, puis acheter des améliorations pour avoir de plus en plus de minerais etc.</p><br><a class="button is-outlined is-inverted is-info " href="https://matthieuporte.github.io/clicker2.html" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+
+
+    });
   </script>
   </body>
 </html>

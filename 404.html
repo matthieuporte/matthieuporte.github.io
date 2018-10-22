@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>&lt;Shar/&gt;&nbsp;(404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'M PLUS 1p', sans-serif;
+    }
+    #bg{
+        height: 100vh;;
+        width: 100vw;
+        filter: blur(3px) grayscale(0%);
+        background-image: url("https://images.unsplash.com/photo-1534360711679-f2d802cb8946?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4857a283207c269e353033d520e30fba&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .text {
+      text-shadow: 0 0 1px black;
+      text-align: center;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+    #titre{
+      font-size: 4em;
+      top: 30%;
+      left: 50%;
+    }
+    #text{
+      font-size: 25px;
+      top: 37%;
+      left: 50%;
+    }
+    #button{
+      top: 80%;
+      left: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="bg"></div>
+  <h1 class="text" id="titre">Vous vous êtes perdu !</h1>
+  <p class="text" id="text">Il est possible que vous ayez rentré une mauvaise adresse</p>
+  <a href="/"><button type="button" class="text btn btn-secondary btn-lg" id="button">Revenir a l'acceuil</button></a>
+</body>
+</html>

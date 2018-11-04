@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/avatarAbstrait.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <title>Matthieu Porte</title>
+    <style>
+      .titre{
+        padding-bottom: 130px;
+      }
+      #nom, #text_description{
+        color: white;
+      }
+      .content{
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .titre-competences{
+        font-weight: bold;
+        text-align: center;
+        font-size: 2em;
+      }
+      .colonne-competences{
+        height: 300px;
+      }
+      .icon-competences{
+        margin-left: calc(50% - 13px);
+        padding-bottom: 40px;
+      }
+      .section-titre{
+        padding-top: 50px;
+      }
+      .signature{
+        float: right;
+        margin-right: 30px;
+      }
+      .hero-image {
+        width:100%;
+        height: 350px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .hero-text {
+        width: 100%;
+        height: 100%;
+        padding-top: 60px;
+        text-align: center;
+        color: white;
+        z-index: 130;
+        background-color: black;
+      }
+      .presentation{
+        position: absolute;
+        top: 84vh;
+        left: 70vw;
+        width: 400px;
+      }
+      .colonne-projets{
+        margin-bottom: 0 !important;
+      }
+      .noDisplay{
+        display: none;
+      }
+      .filtre-projet{
+        filter: grayscale(100%);
+
+      }
+      .avatar-accueil{
+          margin-left: calc(50% - 64px);
+      }
+      .titre-projet{
+        font-size: 4em;
+      }
+      .contenu-projet{
+        font-size: 1em;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      .description-responsive{
+        display: none;
+      }
+      .acceuilPortfolio{
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+          ),url('./images/bg-home-min.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .is-rounded{
+        border-radius: 10px !important;
+      }
+      @media (max-width: 400px){
+        .hero-image {
+          height: 200px !important;
+        }
+
+      }
+      @media (max-width: 740px){
+        .hero-image {
+          height: 400px ;
+        }
+
+      }
+      @media (max-width : 1024px){
+        .presentation{
+          display: none;
+        }
+        .acceuilPortfolio{
+          background: linear-gradient(
+              rgba(128, 79, 144, 0.5), 
+              rgba(128, 79, 144, 0.5)
+            ),url();
+        }
+        .hero-image {
+          width:100%;
+          height: 350px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+        .section-titre{
+          padding-bottom: 30px;
+        }
+        .description-responsive{
+          display: block;
+        }
+        .titre-projet{
+          font-size: 2em;
+        }
+        .contenu-projet{
+          font-size: 1em;
+        }
+      }
+      @media (max-width : 1524px){
+        .presentation{
+          position: absolute;
+          top: 84vh;
+          left: 60vw;
+          width: 400px;
+        }
+        #text{
+            font-size: 20px !important;
+            width: 90%;
+        }
+      }
+
+      .slick-slide {
+        margin: 0px 20px;
+      }
+
+      .slick-slide img {
+        width: 100%;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: black;
+      }
+
+      .slick-slide {
+        transition: all ease-in-out .3s;
+        opacity: .2;
+      }
+      
+      .slick-active {
+        opacity: .5;
+      }
+
+      .slick-current {
+        opacity: 1;
+      }
+      .card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        cursor: pointer;
+      }
+      .titre-card{
+        font-weight: bold;
+      }
+      .white{
+        color: white !important;
+      }
+      #overlay {
+          position: fixed;
+          display: none;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.85);
+          z-index: 20;
+          cursor: pointer;
+      }
+      .is-4{
+        cursor: pointer;
+      }
+      #text{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 50px;
+          color: white;
+          width: 60%;
+          transform: translate(-50%,-50%);
+          -ms-transform: translate(-50%,-50%);
+      }
+    </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  </head>
+  <body>
+    <section class="hero is-fullheight acceuilPortfolio">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <span class="navbar-item">
+                  <a class="button is-light" href="https://github.com/matthieuporte" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Github</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
+                  <a class="button is-light" href="https://www.instagram.com/matthieu_porte/" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-instagram"></i>
+                    </span>
+                    <span>Instagram</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered titre">
+          <h1 class="title" id="nom"></h1>
+          <h2 class="subtitle" id="text_description"></h2>
+          <figure class="image is-128x128 avatar-accueil">
+            <img class="is-rounded" src="./images/avatar.jpg">
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="presentation" data-aos="fade-left" data-aos-offset="300" id="presentation">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <i class="fas fa-headset fa-3x"></i>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Salut, je suis  Matthieu Porte</p>
+            </div>
+          </div>
+
+          <div class="content">
+            Depuis automne 2016, je développe des sites et des jeux pour mes amis. Je programme en HTML/JS, C# et, a l'occasion de <a href="#projets">#Shar</a>, j'ai pu apprendre Ruby on Rails. J'ai participé au
+            <a href="http://www.lemans.sarthe.cci.fr/agenda/startup-weekend-54-heures-pour-creer-une-startup" target="_blank">#StartupWeekend</a> en 2017 et compte reunir une équipe pour
+            participer aux <a href="http://www.les24hducode.fr/" target="_blank">#24hDuCode</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-warning is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            A propos de moi
+          </h1>
+          <div class="content description-responsive">
+            Depuis automne 2016, je développe des sites et des jeux pour mes amis. Je programme en HTML/JS, C# et, a l'occasion de <a href="#projets">#Shar</a>, j'ai pu apprendre Ruby on Rails. J'ai participé au
+            <a href="http://www.lemans.sarthe.cci.fr/agenda/startup-weekend-54-heures-pour-creer-une-startup">#StartupWeekend</a> en 2017 et compte reunir une équipe pour
+            participer aux <a href="http://www.les24hducode.fr/">#24hDuCode</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-medium">
+      <div class="hero-head">
+        <h1 class="title has-text-centered section-titre" id="competences-type">
+          Mes competences
+        </h1>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-3 colonne-competences">
+              <span class="icon has-text-warning icon-competences" data-aos="zoom-in-down">
+                <i class="fas fa-cube fa-4x"></i>
+              </span>
+              <h1 class="titre-competences">
+                3D developer
+              </h1>
+              <div class="content">
+                Unity 3D m'a permis d'apprendre les bases d'un jeu video en 3D, puis de savoir en créer un par moi même.&nbsp;
+                J'ai aussi apris a créer mes propres models 3D afin d'être capable de créer un jeu de A a Z.
+              </div>
+            </div>
+            <div class="column is-3 colonne-competences">
+              <span class="icon has-text-warning icon-competences" data-aos="zoom-in-down" data-aos-delay="50">
+                <i class="fas fa-laptop-code fa-4x"></i>
+              </span>
+              <h1 class="titre-competences">
+                Front-end developer
+              </h1>
+              <div class="content">
+                Developper des interfaces web est surement ce que je sais faire de mieux, en effet, c'est grace au trio HTML/CSS/JS que j'ai apris a developper.
+              </div>
+            </div>
+            <div class="column is-3 colonne-competences">
+              <span class="icon has-text-warning icon-competences" data-aos="zoom-in-down" data-aos-delay="150">
+                <i class="fas fa-database fa-4x"></i>
+              </span>
+              <h1 class="titre-competences">
+                Back-end developer
+              </h1>
+              <div class="content">
+                J'ai apris a manier (autant que je pouvais) le Ruby on Rails grace a mon projet de reseau social intitulé Shar.
+              </div>
+            </div>
+            <div class="column is-3 colonne-competences">
+              <span class="icon has-text-warning icon-competences" data-aos="zoom-in-down" data-aos-delay="200">
+                <i class="fas fa-gamepad fa-4x"></i>
+              </span>
+              <h1 class="titre-competences">
+                Gamer
+              </h1>
+              <div class="content">
+                J'apprecie tout ce qui touche a l'univers médiéval ou fantastique.
+                Avoir cette ouverture me permet d'avoir plus d'imagination et un point de vue different sur mes créations
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-warning is-large" id="projets">
+      <div class="hero-head">
+        <h1 class="title has-text-centered section-titre">
+          Mes projets
+        </h1>
+        <br><br>
+      </div>
+      <div class="columns is-gapless colonne-projets">
+        <div class="column is-4" id="shar">
+          <div class="hero-image" style="background-image : url('./images/shar.png')">
+            <div class="hero-text noDisplay">
+              <h1 class="titre-projet">Shar</h1>
+              <p class="contenu-projet">Shar est un reseau social, où vous pourrez partager votre passion, vos créations et rejoindre vos amis en vous inscrivant gratuitement ! </p>
+              <br>
+              <a class="button is-outlined is-inverted is-info " href="http://35.180.152.234" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4" id="lowlib">
+          <div class="hero-image" style="background-image : url('./images/lowPolyLibDemo.png')">
+            <div class="hero-text noDisplay">
+              <h1 class="titre-projet">LowLib</h1>
+              <p class="contenu-projet">LowLib est une bibliotheque de models 3D gratuite créée par mes soins a l'aide du logiciel Blender.</p>
+              <br>
+              <a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/tsaxe96dqma9lr4/lowlib.zip/file" target="_blank">Telecharger la bibliotheque&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4" id="spyadv">
+          <div class="hero-image" style="background-image : url('./images/SpyAdv_ban.jpg')">
+            <div class="hero-text noDisplay">
+              <h1 class="titre-projet">SpyAdv</h1>
+              <p class="contenu-projet">SpyAdv est mon premier jeu avec Unity3D. C'est un FPS où vous devrez survivre a une invasion de zombies.</p>
+              <br>
+              <a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/9c98ymhu6cd7wjb/SpyAdvFini.zip/file
+" target="_blank">Telecharger le jeu&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-gapless colonne-projets">
+        <div class="column is-4" id="nama">
+          <div class="hero-image" style="background-image : url('./images/nama-baniere.png')">
+            <div class="hero-text noDisplay">
+              <h1 class="titre-projet">Nama</h1>
+              <p class="contenu-projet">Nama est une histoire interactive ou vous serez confrontés a des choix qui déterminerons votre aventure.</p>
+              <br>
+              <a class="button is-outlined is-inverted is-info " href="http://nama.rf.gd/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4" id="clicker2">
+          <div class="hero-image" style="background-image : url('./images/clicker-deux.png')">
+            <div class="hero-text noDisplay">
+              <h1 class="titre-projet">Clicker 2</h1>
+              <p class="contenu-projet">Clicker 2 est un jeu tres adictif où le principe est de cliquer sur un minerai pour gagner de nouveaux minerais, puis acheter des améliorations pour avoir de plus en plus de minerais etc.</p>
+              <br>
+              <a class="button is-outlined is-inverted is-info " href="https://matthieuporte.github.io/clicker2.html" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4" id="autres_projets">
+          <a href="https://matthieuporte.github.io/repertoire">
+            <div class="hero-image" style="background-image : url('./images/autres_projets.png')">
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="hero" id="discover">
+      <div class="hero-head">
+        <h1 class="title has-text-centered section-titre">
+          Amis d&eacute;veloppeurs :
+        </h1>
+        <br><br>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <section class="center slider">
+            <div>
+              <a href="https://jordanbmrd.github.io" target="_blank">
+              <div class="card">
+                <img src="./images/jordan-avatar.png" class="img-card" >
+                <h3 class="titre-card">Jordan Baumard</h3>
+                <p class="text-card">Web developer</p>
+              </div>
+              </a>
+              <br>
+            </div>
+            <div>
+              <a href="https://www.instagram.com/mpmg15/" target="_blank">
+              <div class="card">
+                <img src="./images/marius.jpg" class="img-card" >
+                <h3 class="titre-card">Marius Coudray</h3>
+                <p class="text-card">Software developer</p>
+              </div>
+              </a>
+              <br>
+            </div>
+            <div>
+              <a href="https://matthieuporte.github.io/mathis" target="_blank">
+              <div class="card">
+                <img src="./images/mathis.jpg" class="img-card" >
+                <h3 class="titre-card">Mathis Perot</h3>
+                <p class="text-card">Game developer</p>
+              </div>
+              </a>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://cdn.discordapp.com/avatars/315852341620244491/0da375038f475696c37ea9cefbe3073f.png" class="img-card" >
+                <h3 class="titre-card">Paul Mairesse</h3>
+                <p class="text-card">Game developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <div class="card">
+                <img src="https://scontent-cdg2-1.cdninstagram.com/vp/49ba5623cd6340f42d5d0ae9528494ae/5C41E8A9/t51.2885-19/s150x150/41144300_920336014824086_2842902182515179520_n.jpg" class="img-card" >
+                <h3 class="titre-card">Martin Vibert</h3>
+                <p class="text-card">Android developer</p>
+              </div>
+              <br>
+            </div>
+            <div>
+              <a href="https://www.neuralia.co/" target="_blank">
+              <div class="card">
+                <img src="https://www.neuralia.co/images/vincent_porte.jpg" class="img-card" >
+                <h3 class="titre-card">Vincent Porte</h3>
+                <p class="text-card">AI guru</p>
+              </div>
+              </a>
+              <br>
+            </div>
+          </section>
+        </div>
+      </div>
+      <br>
+    </section>
+    <section class="hero acceuilPortfolio is-large" id="contact">
+      <div class="hero-head">
+        <div class="container">
+          <br><br>
+          <h1 class="title white">
+            &nbsp;Me contacter
+          </h1>
+          <h2 class="subtitle">
+            <br>
+            &nbsp;<a href="https://www.instagram.com/matthieu_porte/" target="_blank"><i class="fab fa-instagram fa-3x white"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/matthieuporte" target="_blank"><i class="fab fa-github fa-3x white"></i></a>
+          </h2>
+        <figure class="image is-128x128 signature">
+          <img class="is-rounded" src="./images/signature_animated.svg">
+        </figure>
+        </div>
+      </div>
+      <div class="hero-body">
+      </div>
+    </section>
+  <div id="overlay">
+    <div id="text"></div>
+  </div> 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    AOS.init();
+
+    $( document ).ready(function() {
+      console.log($(window).width());
+      if($(window).width() > 1200){
+        $(".hero-image").hover(function(){
+            $(this).addClass("filtre-projet");
+            $(this).children(":first").removeClass("noDisplay");
+            }, function(){
+              $(this).removeClass("filtre-projet");
+              $(this).children(":first").addClass("noDisplay");
+        });
+      }
+
+    $('a[href^="#"]').click(function(){
+        var id = $(this).attr("href");
+        var offset = $(id).offset().top
+        $('html, body').animate({scrollTop: offset - 100}, 'slow');
+        return false;
+    });
+
+    function generateRandomString(maxLenght) {
+      var specialCharacters = "#$!.;,?§*µ%£^¨=}]@^\`|[]{}#~&é-è_çàAZERTYUIOPMLKJHGFDSQWXCVBNazertyuiopmlkjhgfdsqwxcvbnn<>";
+      var FinalString = '';
+      for (i=0;i<maxLenght;i++){
+        FinalString += specialCharacters.charAt(Math.floor(Math.random()*specialCharacters.length));
+      }
+      return FinalString;
+    }
+
+    function suffleString(string,el,duree) {
+      var iteration = 0;
+      var ltrAsuprr = string.length/1.3;
+      while (iteration < duree) {
+        if (iteration != 0) {
+          var intervale = iteration*50;
+        } else {
+          var intervale = 0;
+        }
+
+        setTimeout(function(){
+          $(el).text(generateRandomString(string.length).substring(0, string.length - ltrAsuprr));
+          if (ltrAsuprr < string.length) {
+            ltrAsuprr -= 3;
+          }
+        }, intervale);
+        iteration++;
+      }
+      setTimeout(function(){
+        $(el).text(string);
+      }, intervale);
+    }
+
+    suffleString("Matthieu Porte","#nom",20);
+    suffleString("Développeur Front-end depuis 2016, programmeur de jeux en 3D et débutant en Back-end","#text_description",40);
+
+
+    $(window).scroll(function () { 
+       $('.titre').css({
+          'bottom' : -($(this).scrollTop()/3)+"px"
+       }); 
+
+    });
+
+      $(".center").slick({
+        centerMode: true,
+        infinite: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+    function overlay(id,contenu) {
+      $(id).on("click",function(){
+        $("#text").html(contenu);
+        $("#overlay").css("display", "block");
+      })
+    }
+
+    $("#overlay").on("click",function(){
+       $("#overlay").css("display", "none");
+    });
+
+    overlay("#shar",'<h1 class="titre-projet">&lt;Shar/&gt;</h1><p>Shar est un reseau social, où vous pourrez partager votre passion, vos créations et rejoindre vos amis en vous inscrivant gratuitement ! </p><br><a class="button is-outlined is-inverted is-info " href="http://35.180.152.234" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#lowlib",'<h1 class="titre-projet">LowLib</h1><p>LowLib est une bibliotheque de models 3D gratuite créée par mes soins a l\'aide du logiciel Blender.</p><br><a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/tsaxe96dqma9lr4/lowlib.zip/file" target="_blank">Telecharger la bibliotheque&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>');
+    overlay("#spyadv",'<h1 class="titre-projet">SpyAdv</h1><p>SpyAdv est mon premier jeu avec Unity3D. C\'est un FPS où vous devrez survivre a une invasion de zombies.</p><br><a class="button is-outlined is-inverted is-info " href="http://www.mediafire.com/file/9c98ymhu6cd7wjb/SpyAdvFini.zip/file" target="_blank">Telecharger le jeu&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i></a>');
+    overlay("#tchatosphere",'<h1 class="titre-projet">Tchatosphere</h1><p>La Tchatosphere est un site totalement libre d\'acces où vous pourrer y discuter avec qui s\'y trouvera !</p><br><a class="button is-outlined is-inverted is-info " href="http://tchatosphere.cloudno.de/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#nama",'<h1 class="titre-projet">Nama</h1><p>Nama est une histoire interactive ou vous serez confrontés a des choix qui déterminerons votre aventure.</p><br><a class="button is-outlined is-inverted is-info " href="http://nama.rf.gd/" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+    overlay("#clicker2",'<h1 class="titre-projet">Clicker 2;</h1><p>Clicker 2 est un jeu tres adictif où le principe est de cliquer sur un minerai pour gagner de nouveaux minerais, puis acheter des améliorations pour avoir de plus en plus de minerais etc.</p><br><a class="button is-outlined is-inverted is-info " href="https://matthieuporte.github.io/clicker2.html" target="_blank">Visiter le site&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></a>');
+
+
+    });
+  </script>
+  </body>
+</html>

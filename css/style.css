@@ -1,0 +1,209 @@
+body{
+	overflow-x: hidden;
+	background-color: black;
+}
+#maintitle{
+	font-family: 'Poor Story', cursive;
+	font-weight: bold;
+	font-size: 5em;
+	text-align: center;
+	width: 500px;
+}
+#description{
+	margin-left: 50px;
+}
+.mainbox{
+	padding-top: 30vh;
+	margin: auto;
+	width: 500px; 
+}
+.rotate{
+	transform: rotateZ(-10deg);
+	transform-origin: right top;
+	transition: transform 0.05s 1s ease-out;
+}
+#canvas3d{
+	position: absolute;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	z-index: -1;
+}
+
+[data-words]{
+  vertical-align: top;
+  position: static
+}
+[data-words] > span{
+  position: absolute;
+  color: #00b5cc;
+}
+*{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+#accueil{
+	height: 100vh;
+	width:  100vw;
+	overflow: hidden;
+}
+
+.experience{
+	position: absolute;
+	top: 85vh;
+	right: 5vw;
+}
+#projets{
+	margin-top:40vh;
+}
+.img_projet{
+	width:100%;
+}
+.titre_projet{
+	transform: rotateZ(0.25turn) translateX(20px) translateY(-20px);
+	transform-origin: top left;
+	font-size: 3em;
+	position: absolute;
+	z-index: 2;
+}
+.projet_contenu{
+	width: 60%;
+	left: 17.5%;
+	top: 40%;
+	position: absolute;
+	transform: scale(1.25); 
+	transform-origin: top;
+	opacity: 0;
+	transition: all 0.25s ease-out;
+}
+.row{
+	margin-bottom: 100px;
+}
+.card_right .projet_contenu{
+	top: calc(40% );
+}
+.card_projet:hover .titre_projet{
+	transform: translateX(-20px) translateY(20px);
+}
+.card_projet:hover .projet_contenu{
+	transform: scale(1);
+	opacity: 1;
+	transition: all 0.25s ease-out;
+}
+.card_projet:hover img{
+	opacity: 0.2;
+	transform: scale(1.25); 
+	transition: all 0.25s ease-out;
+}
+.card_projet img{
+	opacity: 1;
+	transform: scale(1); 
+	transition: all 0.25s ease-out;
+}
+.card_right{
+	margin-top: 70px;
+}
+.card_projet{
+	height: 100%;
+}
+.overImg{
+	overflow: hidden;
+	height: 95%;
+	width:95%;
+}
+.text_contenu_site{
+	border: white solid 1px; 
+	text-align: center;
+	padding: 25px 25px 25px 25px; 
+}
+.link_projet{
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+@media (max-width : 1024px){
+	.experience{
+		position: block;
+		top: 90vh !important;
+	}
+	.projets{
+		margin-top: 0;
+	}
+	.projet_contenu{
+		width: 75%;
+		left: 10%;
+		top: 20% !important;
+		font-size: 2em;
+	}
+	.link_projet{
+		margin-top: 50px;
+		font-size: 1.3em;
+	}
+}
+
+#separator{
+	position: relative;
+  height: 100px;
+  color: black;
+  background-image: linear-gradient(#fff, #fff);
+  clip-path: polygon(
+    100% 100%,
+    0 120%,
+    0 calc(100% - 5vw)
+  );
+}
+
+#footer *{
+	background-color: white;
+	color : black;
+}
+#footer{
+	background-color: white;
+	color : black;
+	width: 100vw;
+	padding-left: 20px;
+}
+.titre_footer{
+	font-size: 3em;
+	padding-left: 30px;
+}
+p{margin-bottom: 0;}
+#link_sn{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 30px;
+}
+#chargement{
+	background: #ecf0f1;
+	height: 100vh;
+	position: fixed;
+	width: 100vw;
+}
+
+#loader {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  border: 8px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-top-color: #000;
+  border-bottom-color: #000;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+a{
+	color: white !important;
+	text-decoration: none !important;
+}

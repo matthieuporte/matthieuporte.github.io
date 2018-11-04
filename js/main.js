@@ -125,11 +125,19 @@ function showText(message,index,idAppend){
 
 var mavar = 0;
 
-$(window).scroll( function(){
+$(window).scroll( function(){	
             
     var bottom_of_object = $(".experience").offset().top + $(".experience").outerHeight();
     var bottom_of_window = $(window).scrollTop() + $(window).height();
    
+
+
+	if ($(window).scrollTop() == 0) {
+		$("#accueil").removeClass("gradient-accueil");
+	} else {
+		$("#accueil").addClass("gradient-accueil");
+	}
+
     if( bottom_of_window > bottom_of_object && mavar != 1){
            mavar = 1;
            prepareText(msg1);

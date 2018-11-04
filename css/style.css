@@ -48,7 +48,11 @@ body{
 	width:  100vw;
 	overflow: hidden;
 }
-
+.gradient-accueil{
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,1) 100%); 
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,1) 100%);
+}
 .experience{
 	position: absolute;
 	top: 85vh;

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>log in</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#page{
+			width: 100vw;
+			height: 100vh;
+		}
+		.contenu{
+			width: calc(100vw - 550px);
+			height: 100vh;
+			float: left;			
+	        background: url('https://source.unsplash.com/random');
+	        background-attachment: fixed;
+	        background-position: center;
+	        background-repeat: no-repeat;
+	        background-size: cover;
+		}
+		.carte{
+			float: left;
+			width: 550px;
+			padding-top: 8%;
+		}
+		.input_text{
+			width: 80%;
+			padding-left: 3%;
+			padding-right: 2%;
+			padding-top: 6%;
+			padding-bottom: 6%;
+			border-radius: 10px;
+			margin-right: 10%;
+			margin-left: 10%;
+			margin-bottom: 10px;
+			border: solid 1pt #bdc3c7;
+		}
+		.carte form{
+			padding-left: 10%;
+			padding-right: 10%;
+			width: 100%;
+		}
+		.titre{
+			text-align: center;	
+			margin-bottom: 9%;
+			font-size: 4em;
+			font-weight: normal;
+		}
+		.button{
+			background-color: #01C3A7;
+			color: white;
+			font-size: 1.2em;
+			padding-top: 5%;
+			padding-bottom: 5%;
+		}
+		.forgot_link{
+			margin-top: 10%;
+			color: grey;
+			text-decoration: none;
+			text-align: center; 
+		}
+		@media (max-width: 1000px){
+			.no_responsive{
+				display: none;
+			}
+			.carte{
+				width: 100vw;
+				padding-top: 15%;
+			}
+			.carte form{
+				padding: 0;
+			}
+			.titre{
+				font-size: 7em;
+			}
+			.button{
+				font-size: 2em;
+			}
+			.forgot_link{
+				font-size: 1.8em;
+			}
+			.input_text{
+				font-size: 2em;
+				width: 90%;
+				margin-right: 5%;
+				margin-bottom: 20px;
+				margin-left: 5%;
+			}
+		}
+	</style>
+</head>
+<body>
+<section id="page">
+	<div class="contenu no_responsive">
+		yolooooooooo
+	</div>
+	<div class="carte">
+		<h2 class="titre">Log in</h2>
+		<form>
+			<input class="input_text" placeholder="username">
+			<input class="input_text" placeholder="password">
+			<button class="input_text button">se connecter </button>
+		</form>
+		<a href="https://matthieuporte.github.io"><p class="forgot_link">mot de passe oublié ?</p></a>
+	</div>
+</section>
+</body>
+</html>

@@ -123,7 +123,7 @@ function showText(message,index,idAppend){
 	}
 }
 
-var mavar = 0;
+var mavar = 0; 	
 
 $(window).scroll( function(){	
             
@@ -166,3 +166,12 @@ while(compteur!=total){
 }
 $("#loader").fadeOut("normal");
 }
+
+
+
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127136960-1');

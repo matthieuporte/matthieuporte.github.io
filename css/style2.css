@@ -1,0 +1,79 @@
+#title{
+	font-family: 'Poor Story', cursive;
+	font-size: 6em;
+	text-align: center;
+	margin-top: 20px;
+	font-weight: bolder;
+}
+body{
+	font-family: 'Montserrat', sans-serif;
+	margin:0;
+}
+*{
+	margin: 0;
+}
+#enonce{
+	margin-top:80px;
+	font-size: 4em; 
+	text-align: center;
+	color :#f7ca18;
+}
+.swing-in-top-fwd{-webkit-animation:swing-in-top-fwd .5s cubic-bezier(.175,.885,.32,1.275) both;animation:swing-in-top-fwd .5s cubic-bezier(.175,.885,.32,1.275) both}
+@-webkit-keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}@keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}
+#compteRebours{
+	position:absolute;
+	top: 10px;
+	font-size: 4em;
+	right: 60px;
+	color :#96281b;
+	padding: 50px;
+	font-weight: bolder;
+}
+#compteurPoints{
+	position:absolute;
+	top: 10px;
+	font-size: 4em;
+	left: 60px;
+	color :#013243;
+	padding: 50px;
+	font-weight: bolder;
+}
+#reponses{
+	margin-top: 10vh;
+	padding-left: 10%;
+	padding-right: 10%;
+	height: 200px;
+}
+.reponse{
+	margin: 3%;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-size: 1.5em;
+	border-radius: 20px;
+	background-color: #f7ca18;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	float: left;
+	width: 27%;
+	box-shadow: 0 6px #d8b115;
+}
+.reponse:hover{
+	box-shadow: 0 4px #d8b115;
+	top: 2px;
+}
+
+.reponse:active {
+	box-shadow: 0 0 #d8b115;
+	top: 6px;
+}
+.validation{
+	text-align: center;
+	color: green;
+	font-size: 1.5em;
+	margin-top: 100px;
+}

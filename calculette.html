@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculette</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/styleJordan.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+	<script type="text/javascript">
+		var calcul = "";
+		var ans = "";
+	</script>
+	<center><div class="content puff-in-center">
+		<small class="last"></small><br><br>
+		<input type="text" name="result" class="result" value="0" readonly>
+		<div class="buttons">
+			<button onclick="calcul += '(';  document.getElementsByClassName('result')[0].value = calcul;" class="btn7">
+				<div class="item">(</div>
+			</button>
+			<button onclick="calcul += ')';  document.getElementsByClassName('result')[0].value = calcul;" class="btn7">
+				<div class="item">)</div>
+			</button>
+			<button onclick="calcul += '%';  document.getElementsByClassName('result')[0].value = calcul;" class="btnpercent">
+				<div class="item">%</div>
+			</button>
+			<button onclick="calcul=''; document.getElementsByClassName('result')[0].value = '0';" class="btnclear">
+				<div class="item">C</div>
+			</button>
+			<button onclick="calcul += '7';  document.getElementsByClassName('result')[0].value = calcul;" class="btn7">
+				<div class="item">7</div>
+			</button>
+			<button onclick="calcul += '8';  document.getElementsByClassName('result')[0].value = calcul;" class="btn8">
+				<div class="item">8</div>
+			</button>
+			<button onclick="calcul += '9';  document.getElementsByClassName('result')[0].value = calcul;" class="btn9">
+				<div class="item">9</div>
+			</button>
+			<button onclick="calcul += '&divide';  document.getElementsByClassName('result')[0].value = calcul;" class="btndivise">
+				<div class="item divise">&divide;</div>
+			</button>
+			<button onclick="calcul += '4';  document.getElementsByClassName('result')[0].value = calcul;" class="btn4">
+				<div class="item">4</div>
+			</button>
+			<button onclick="calcul += '5';  document.getElementsByClassName('result')[0].value = calcul;" class="btn5">
+				<div class="item">5</div>
+			</button>
+			<button onclick="calcul += '6';  document.getElementsByClassName('result')[0].value = calcul;" class="btn6">
+				<div class="item">6</div>
+			</button>
+			<button onclick="calcul += '&times';  document.getElementsByClassName('result')[0].value = calcul;" class="btnmultiple">
+				<div class="item multiple">&times;</div>
+			</button>
+			<button onclick="calcul += '1';  document.getElementsByClassName('result')[0].value = calcul;" class="btn1">
+				<div class="item">1</div>
+			</button>
+			<button onclick="calcul += '2';  document.getElementsByClassName('result')[0].value = calcul;" class="btn2">
+				<div class="item">2</div>
+			</button>
+			<button onclick="calcul += '3';  document.getElementsByClassName('result')[0].value = calcul;" class="btn3">
+				<div class="item">3</div>
+			</button>
+			<button onclick="calcul += '-';  document.getElementsByClassName('result')[0].value = calcul;" class="btnsoustract">
+				<div class="item soustract">-</div>
+			</button>
+			<button onclick="calcul += '0';  document.getElementsByClassName('result')[0].value = calcul;" class="btn0">
+				<div class="item">0</div>
+			</button>
+			<button onclick="calcul += '.';  document.getElementsByClassName('result')[0].value = calcul;" class="btnpoint">
+				<div class="item">.</div>
+			</button>
+			<button onclick="
+			try{
+				calcul = calcul.replace('%', '/100');
+				calcul = calcul.replace('&divide', '/');
+				calcul = calcul.replace('&times', '*');
+				calcul = calcul.replace('π', 'Math.PI');
+				calcul = calcul.replace('Ans', ans);
+				calcul = eval(calcul);
+				if (calcul == undefined) {
+					calcul = '0';
+				}
+				if (calcul == Infinity) {
+					calcul = '∞';
+				}
+				if(calcul == 666){
+					document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
+					document.getElementsByTagName('body')[0].style.backgroundImage = 'none';
+					document.getElementsByTagName('body')[0].style.transitionDuration = '1s';
+				}
+				else if(calcul == 69){
+					document.getElementsByTagName('body')[0].style.backgroundColor = 'pink';
+					document.getElementsByTagName('body')[0].style.backgroundImage = 'inherit';
+					document.getElementsByTagName('body')[0].style.transitionDuration = '1s';
+				}
+				else{
+					document.getElementsByTagName('body')[0].style.backgroundColor = 'none';
+					document.getElementsByTagName('body')[0].style.backgroundImage = 'inherit';
+					document.getElementsByTagName('body')[0].style.transitionDuration = '1s';
+				}
+				document.getElementsByClassName('result')[0].value = calcul;
+			} catch(e){
+				if (e instanceof SyntaxError) {
+					document.getElementsByClassName('result')[0].value = 'Erreur';
+				}
+			}
+			document.getElementsByClassName('last')[0].innerHTML = 'Dernier résultat: ' + calcul;
+			ans = calcul;
+			" class="btnresultgive">
+				<div class="item resultgive">=</div>
+			</button>
+			<button href="" onclick="calcul += '+'; console.log('6');" class="btnadd">
+				<div class="item add">+</div>
+			</button>
+		</div>
+		<div id="morefeatures">
+			<a href="#" onclick="document.getElementById('morefeatures').style.display = 'none'; document.getElementById('features').style.display = 'block';">
+				<i class="fas fa-arrow-circle-down"></i><br>
+				<small>Cliquez pour plus de fonctionnalités</small>
+			</a>
+		</div>
+		<div id="features">
+			<hr>
+			<div class="content buttons2">
+				<button onclick="calcul = Math.sin(calcul); document.getElementsByClassName('result')[0].value = calcul;" class="btn0">
+					<div class="item">sin</div>
+				</button>
+				<button onclick="calcul = Math.cos(calcul); document.getElementsByClassName('result')[0].value = calcul;" class="btn0">
+					<div class="item">cos</div>
+				</button>
+				<button onclick="calcul = math.tan(calcul); document.getElementsByClassName('result')[0].value = calcul;" class="btn0">
+					<div class="item">tan</div>
+				</button>
+				<button onclick="calcul = Math.sqrt(calcul); document.getElementsByClassName('result')[0].value = calcul;" class="btn0">
+					<div class="item">&radic;</div>
+				</button>
+				<button onclick="
+					calcul = Math.pow(calcul, 2);
+					document.getElementsByClassName('result')[0].value = calcul;
+				" class="btn0">
+					<div class="item">x<sup>2</sup></div>
+				</button>
+				<button onclick="
+					calcul += 'π';
+					document.getElementsByClassName('result')[0].value = calcul;
+				" class="btn0">
+					<div class="item">π</div>
+				</button>
+				<button onclick="
+					calcul += 'Ans';
+					document.getElementsByClassName('result')[0].value = calcul;
+				" class="btn0">
+					<div class="item">Ans</div>
+				</button>
+			</div>
+		</div>
+	</div></center>
+
+	<br><br><br><br><br><br><br><br><br>
+
+	<div data-aos="fade-up">
+		<p class="trouvaille">
+			La petite trouvaille sur Internet pour les calculs de grandes envergures… Mince ! Encore une opération mathématique qui s'impose dans la routine d'une journée de travail et nécessite l'emploi de la foutue calculatrice. Mais encore faut-il la dénicher ! Sous Windows, on la repère dans les accessoires, sous OSX, dans les applications. Quelle perte de temps ! Et si vous la trouviez simplement en deux clics de souris dans vos favoris ? Allez, essayez un coup et ce sera l'amour fou ! Petite calculette, énorme rendement !
+		</p>
+	</div>
+
+	<!-- <script type="text/javascript" src="js/calculette.js"></script> -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

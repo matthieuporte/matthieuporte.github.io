@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aniTitle</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<!--bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<!--fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!--FA-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<style>
+#titre{
+	text-align: left;
+	width: 200px; 
+	font-size: 5em;
+	font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    color: white;
+    top: 40%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+}
+.swing-out-top-bck{-webkit-animation:swing-out-top-bck .45s cubic-bezier(.6,-.28,.735,.045) both;animation:swing-out-top-bck .45s cubic-bezier(.6,-.28,.735,.045) both}
+.swing-in-bottom-bck{-webkit-animation:swing-in-bottom-bck .6s cubic-bezier(.175,.885,.32,1.275) both;animation:swing-in-bottom-bck .6s cubic-bezier(.175,.885,.32,1.275) both}
+@-webkit-keyframes swing-out-top-bck{0%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}100%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}}@keyframes swing-out-top-bck{0%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}100%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}}
+@-webkit-keyframes swing-in-bottom-bck{0%{-webkit-transform:rotateX(-70deg);transform:rotateX(-70deg);-webkit-transform-origin:bottom;transform-origin:bottom;opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);-webkit-transform-origin:bottom;transform-origin:bottom;opacity:1}}@keyframes swing-in-bottom-bck{0%{-webkit-transform:rotateX(-70deg);transform:rotateX(-70deg);-webkit-transform-origin:bottom;transform-origin:bottom;opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);-webkit-transform-origin:bottom;transform-origin:bottom;opacity:1}}
+body{
+	height: 100vh;
+	overflow: hidden;
+	background-color: black;
+}
+#image{
+    position: fixed;
+    top: 20vh;
+    right: 10vw;
+    width: 30%;
+    border:10px solid white;
+}
+</style>
+</head>
+<body>
+
+	<h1 id="titre"></h1>
+	<img src="https://images.unsplash.com/photo-1545906785-38f53f99e380" id="image">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript">
+var Titles = ["Marvel","Harry Potter","Lego","Starcraft"];
+var URL = ["https://images.unsplash.com/photo-1545906785-38f53f99e380","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPoJfNIsy1nkjGxx4KatKBEmtHM_dDUm5NQGmitZMIXuVTBeoM","https://static.interestingengineering.com/images/sizes/How_to_build_LEGO_resize_md.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq75nKpO_sfckryqM0oTD6arNXu4-buMBHi6t3WSxmuZJuu3D5"];
+var actualIndex = 0;
+var isAnim = 0;
+changeText("#titre",Titles[actualIndex]);
+$('body').bind('mousewheel', function(e){
+	console.log(actualIndex);
+    if(e.originalEvent.wheelDelta /120 > 0) {
+    	if (actualIndex > 0 && isAnim == 0){
+    		actualIndex--;
+    	}
+		changeText("#titre",Titles[actualIndex]);
+    }
+    else{
+    	if (actualIndex < Titles.length - 1 && isAnim == 0){
+    		actualIndex++;
+    	}
+		changeText("#titre",Titles[actualIndex]);
+    }
+});
+
+function changeText(ref,newText){
+	if (isAnim == 0){
+		isAnim = 1;
+		var txt = newText;
+		var lengthRef = $(ref).children().length +1 ;
+		var newTxtSpan = txt.replace(/\w/g,function(c){
+		  return '<span>'+c+'</span>';
+		});
+		$($("span").get().reverse()).each(function(i) {
+			$(this).delay(100 * i).fadeOut(50);
+		});
+		$("#image").removeClass("swing-in-bottom-bck").addClass("swing-out-top-bck");
+
+		setTimeout(function(){ 
+			$("#image").attr("src",URL[actualIndex]);
+			$("#image").removeClass("swing-out-top-bck").addClass("swing-in-bottom-bck");
+			$(ref).hide().html(newTxtSpan);
+			$("span").hide();
+			$(ref).show();
+			$($("span").get()).each(function(i) {
+				$(this).delay(100 * i).fadeIn(50);
+			});
+			setTimeout(function(){ 
+				isAnim = 0;
+			}, 100 * lengthRef);
+		}, 100 * lengthRef);
+	}
+
+
+}
+
+
+</script>
+</body>
+</html>

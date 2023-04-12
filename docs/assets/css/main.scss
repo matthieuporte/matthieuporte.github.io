@@ -13,11 +13,11 @@ body{
     line-height: 25px;
 }
 
-a{
+.anti-a{
     text-decoration: none;
     color: black;
 }
-h4{
+.anti-h4{
     margin:0;
     font-weight: 500;
 }
@@ -32,11 +32,14 @@ h4{
 
 @media (max-width : 700px){
     body{
-        margin-left: 2em;
-        margin-right: 2em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
     }
 }
 
+.w-full{
+    width: full;
+}
 .align-right{
     text-align: right;
 }
@@ -46,9 +49,6 @@ h4{
 }
 .underline{
     text-decoration: underline;
-}
-.w-full{
-    width:100%;
 }
 .bg-white{
     background-color: white;
@@ -82,7 +82,7 @@ h4{
     margin-top: 25px;
 }
 .space-bottom{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .Bspace-bottom{
     margin-bottom: 100px;

@@ -1,0 +1,19 @@
+---
+layout: default
+title: "hub"
+---
+
+<h1 class="center bold text-lg space-top">matthi<span class="negative-vermeil">r</span>u</h1>
+<h3 class="center light text-grey Bspace-bottom">Frontend developer - student @<a href="https://www.epita.fr/" target="_blank" class="text-blue hover-negative-blue">EPITA</a></h3>
+
+
+
+<p class="center text-grey light space-bottom">Things I wrote :</p>
+
+  {% for post in site.posts  %}
+
+    <a href="{{ post.url }}"><div class="w-full card space-bottom">
+      <h4><span class="text-grey light">{{ post.date | date_to_string}}</span> - <span>{{ post.title }}</span></h4>
+    </div></a>
+
+  {% endfor %}

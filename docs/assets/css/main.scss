@@ -1,4 +1,99 @@
 ---
 ---
 
-@import "base";
+$sand: #faf4d3;
+$blue: #284387;
+$vermeil: #6b0e05;
+
+body{
+    background-color: $sand;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    line-height: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+h4{
+    margin:0;
+    font-weight: 500;
+}
+
+
+@media (max-width : 1200px){
+    body{
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+}
+
+@media (max-width : 700px){
+    body{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+.align-right{
+    text-align: right;
+}
+.justify{
+    text-align: justify;
+    //text-justify:  inter-word;
+}
+.underline{
+    text-decoration: underline;
+}
+.w-full{
+    width:100%;
+}
+.bg-white{
+    background-color: white;
+}
+.card{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 12px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+.negative-vermeil{
+    color: white;
+    background-color: $vermeil;
+}
+.text-vermeil{
+    color:$vermeil;
+}
+.text-grey{
+    color:grey;
+}
+.center{
+    text-align: center;
+}
+.bold {
+    font-weight: bold;
+}
+.text-lg{
+    font-size: xx-large;
+}
+.space-top{
+    margin-top: 25px;
+}
+.space-bottom{
+    margin-bottom: 25px;
+}
+.Bspace-bottom{
+    margin-bottom: 100px;
+}
+.light{
+    font-weight: lighter;
+}
+.text-blue{
+    color:$blue;
+}
+.hover-negative-blue:hover{
+    color:white;
+    background-color:$blue;
+}

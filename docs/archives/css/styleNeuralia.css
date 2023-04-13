@@ -1,0 +1,500 @@
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+#background_accueil{
+	width: 100vw;
+	height: 100vh;
+    background:-webkit-gradient(
+            linear, 
+            left top, left bottom, 
+            from(rgba(0, 100, 255, 0.3)), 
+            to(rgba(0, 0, 10, 0.3))
+          ),url('../images/bg-neuralia.jpg');
+    background:-webkit-linear-gradient(
+            rgba(0, 100, 255, 0.3), 
+            rgba(0, 0, 10, 0.3)
+          ),url('../images/bg-neuralia.jpg');
+    background:-o-linear-gradient(
+            rgba(0, 100, 255, 0.3), 
+            rgba(0, 0, 10, 0.3)
+          ),url('../images/bg-neuralia.jpg');
+    background:linear-gradient(
+            rgba(0, 100, 255, 0.3), 
+            rgba(0, 0, 10, 0.3)
+          ),url('../images/bg-neuralia.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#section_accueil{
+	overflow: hidden;
+	margin-bottom: 0;
+}
+.animation-background {
+  -webkit-animation-name: animBkg;
+          animation-name: animBkg;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+@-webkit-keyframes animBkg {
+  0% {
+  	-webkit-transform: translateY(-50px) scale(1.2);
+  	        transform: translateY(-50px) scale(1.2);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:0;
+  }
+  100% {
+  	-webkit-transform: translate(0, 0) scale(1);
+  	        transform: translate(0, 0) scale(1);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:1;
+  }
+}
+@keyframes animBkg {
+  0% {
+  	-webkit-transform: translateY(-50px) scale(1.2);
+  	        transform: translateY(-50px) scale(1.2);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:0;
+  }
+  100% {
+  	-webkit-transform: translate(0, 0) scale(1);
+  	        transform: translate(0, 0) scale(1);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:1;
+  }
+}
+.responsive{
+	display:none;
+}
+#showTitre{
+	-webkit-animation: swing-in-top-fwd 0.5s 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+.showTxt {
+	-webkit-animation: swing-in-top-fwd 0.5s 1.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s 1.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+#gifScroll{
+  	position: absolute;
+	bottom: 20px;
+	left: calc(50% - 50px);
+}
+#text_accueil{
+	color: white;
+	text-align: center;
+	padding-top: 15vh;
+}
+#text_accueil h2{
+	font-size: 2.5em;
+}
+#text_accueil h4{
+	font-size: 2em;
+}
+#text_accueil h5{
+	font-size: 1.5em;
+}
+#team_titre{
+	text-align: center;
+	font-size: 4em;
+	color:#1E2A38;
+}
+.border-green{
+	width: 200px;
+	margin-left: calc(50vw - 100px);
+	border-bottom: solid 2px #33CEB8; 
+}
+.gradient_profile{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+	background:-webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba(11, 186, 164, 1)),
+        color-stop(rgba(11, 186, 164, 0.9)),  
+        to(rgba(11, 186, 164, 0.4))
+      );
+	background:-webkit-linear-gradient(
+        rgba(11, 186, 164, 1),
+        rgba(11, 186, 164, 0.9),  
+        rgba(11, 186, 164, 0.4)
+      );
+	background:-o-linear-gradient(
+        rgba(11, 186, 164, 1),
+        rgba(11, 186, 164, 0.9),  
+        rgba(11, 186, 164, 0.4)
+      );
+	background:linear-gradient(
+        rgba(11, 186, 164, 1),
+        rgba(11, 186, 164, 0.9),  
+        rgba(11, 186, 164, 0.4)
+      );
+	opacity:0;
+	-webkit-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+}
+.contenu_profile{
+	padding-top: 30%;
+	overflow-x: hidden;
+	-webkit-transform: translateY(-20%) scale(0.7);
+	    -ms-transform: translateY(-20%) scale(0.7);
+	        transform: translateY(-20%) scale(0.7);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	transition: -webkit-transform 0.3s ease-out;
+	-o-transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.image_profile img{
+	width: 100%;
+}
+.image_profile:hover .gradient_profile{
+	opacity: 1;
+	-webkit-transition: opacity 0.2s ease-out;
+	-o-transition: opacity 0.2s ease-out;
+	transition: opacity 0.2s ease-out;
+}
+.image_profile:hover .contenu_profile{
+	-webkit-transform: translateY(0) scale(1);
+	    -ms-transform: translateY(0) scale(1);
+	        transform: translateY(0) scale(1);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	transition: -webkit-transform 0.3s ease-out;
+	-o-transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.profiles .col-lg{
+	padding: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 40px;
+}
+.icons_profile i{
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+.Nom_profile{
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 0px ;
+	font-size: 2em;
+}
+.Class_profile{
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+.profile_citation{
+	color:grey;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1.2em;
+}
+#logoNeuralia{
+	width: 15vw;
+	margin-left: 20vw;
+}
+.bg_solution{
+	background-color: #faffff;
+	border: 10px solid white;
+	margin-bottom: 60px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border-radius: 15px;
+	cursor: pointer; 
+}
+.image_solution{
+	width: calc(100% - 200px);
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.titre_solution{
+	font-size: 2em;
+	position: absolute;
+	top: 0;
+	line-height: 30px;
+	-webkit-transform-origin: top left;
+	    -ms-transform-origin: top left;
+	        transform-origin: top left;
+	-webkit-transform: rotateZ(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotateZ(90deg);
+	text-decoration: underline;
+}
+.contenu_solution{
+	margin-top: 15px;
+	text-align: justify;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+.bg_solution:hover .titre_solution{
+	border-bottom: 0px;
+	text-decoration: none;
+	line-height: 0;
+	width: 100%; 
+	-webkit-transform: rotateZ(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotateZ(0deg);
+}
+.btnVert{
+	background-color: #01C3A7;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	width: 300px;
+	margin-left: calc(50% - 150px);
+	font-size: 1.5em;
+	border-radius: 10px;
+	padding: 10px 20px 10px 20px;
+}
+#canvas3d {
+	overflow: hidden;
+	background-color: white;
+}
+.row_discover{
+	position: absolute;
+	width: 100%;
+}
+.titre_discover{
+	text-align: center;
+	font-size: 2em;
+}
+.card_discover{
+	margin: 50px 100px 0px 100px;
+	padding: 40px 20px 40px 20px;
+	background-color: #03153D;
+	border-radius: 20px;
+	color: white;
+}
+.img_discover{
+	width: 40%;
+	margin-left: 30%;
+	opacity: 0.7;
+}
+.contenu_discover{
+	text-align: center;
+	font-size: 1.2em;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.icons_profile .fa-3x{
+	color: white;
+}
+.souligner{
+	text-decoration: underline;
+}
+section{
+	margin-bottom: 50px;
+}
+input:focus{
+	outline: none;
+}
+textarea:focus{
+	outline: none;
+}
+.input_contact{
+	border: none;
+	width: 85%;
+}
+.icon_contact{
+	margin-right: 10px;
+}
+.form_contact{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+}
+.icon_contact_ta{
+	float: left;
+	padding-right: 20px;
+}
+#contact .col-lg{
+	padding: 0;
+}
+.ta_contact{
+	width: calc(100% - 80px);
+	border-bottom: 1px solid black;
+	margin-left: 40px;
+}
+#googleMaps{
+	width: 100%;
+	height: 40vh;
+}
+.lienContact{
+	background-color: #33CEB8;
+	color: white;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.scrolloff {
+  pointer-events: none;
+}
+@media (max-width: 700px){
+	.showTxt{
+		width: 100vw;
+		font-size: 1em;
+	}
+	#showTitre{
+		width: 100vw;
+		font-size: 2em;
+	}
+	#text_accueil h2{
+		font-size: 2em;
+	}
+	.image_profile:hover .contenu_profile{
+		-webkit-transform: translateY(0) scale(1);
+		    -ms-transform: translateY(0) scale(1);
+		        transform: translateY(0) scale(1);
+	}
+}
+@media (max-width: 1000px) and (min-width: 700px){
+	#gifScroll{
+		display: none !important;
+	}
+	#text_accueil h2{
+		font-size: 2em;
+	}
+	#text_accueil h4{
+		display: none;
+	}
+	#text_accueil h5{
+		display: none;
+	}
+	.responsive{
+		display:inherit;
+	}
+	#team_titre{
+		font-size: 2.5em;
+	}
+	.profile_citation{
+		font-size: 0.9em;
+	}
+	.showTxt{
+		width: 100vw;
+		font-size: 2em;
+	}
+	#showTitre{
+		width: 100vw;
+		font-size: 3em;
+	}
+	#logoNeuralia{
+		width: calc(100vw - 500px) !important;
+		margin-left: 250px !important;
+		margin-top: 200px;
+	}
+	.image_profile:hover .contenu_profile{
+		-webkit-transform: translateY(0) scale(1);
+		    -ms-transform: translateY(0) scale(1);
+		        transform: translateY(0) scale(1);
+	}
+}
+@media (max-width: 1000px){
+	.contenu_profile .fa-3x{
+		font-size: 5em;
+		margin-top: 20px;
+	}
+	.Class_profile{
+		font-size: 2em;
+	}
+	.Nom_profile{
+		font-size: 4em;
+	}
+	.profile_citation{
+		font-size: 2em;
+	}
+	.titre_section{
+		font-size: 4em !important;
+		padding-top: 40px; 
+	}
+	.titre_solution{
+		font-size: 4em;
+		line-height: 60px;
+	}
+	.contenu_solution{
+		font-size: 2em;
+	}
+	.image_solution{
+		width: calc(100% - 100px);
+		margin-left: 50px;
+		margin-top: 20px;
+	}
+	.btnVert{
+		width: 90%;
+		margin-left: 5%;
+		font-size: 3em;
+		border-radius: 10px;
+		padding: 10px 20px 10px 20px;
+	}
+
+	.titre_discover{
+		text-align: center;
+		font-size: 4em;
+	}
+	.img_discover{
+		width: 80%;
+		margin-left: 10%;
+		opacity: 0.5;
+	}
+	.contenu_discover{
+		text-align: center;
+		font-size: 2.2em;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.row_discover{
+		position: static;
+		width: 100%;
+	}
+}

@@ -37,7 +37,7 @@ title: "hub"
 <div id="LPrecent" class="display-none">
   {% assign sorted = site.projects | sort: 'year' | reverse  %}
 
-  {% for project in sorted limit:2 %}
+  {% for project in sorted limit:3 %}
 
     <a href="{{ project.url }}" class="anti-a"><div class="card space-bottom">
       <h4 class="anti-h4"><span class="text-grey light">{{ project.year }}</span> - {{ project.name }}</h4>

@@ -21,6 +21,10 @@ I really enjoy making portfolios, that's why I've got so many of them :
 My friend Jordan and I decided to see who would do the best calculator in one day, judge for yourself :
 [his](/archives/calculette.html) vs [mine](/archives/calculator.html)
 
+### Neuralia.co
+
+My father asked me to redo the website of his company. [Here](/archives/neuralia.html) is what I made.
+
 ### InstantPic 
 
 [instant pic](/archives/instantPic.html) was a try on the unsplash API

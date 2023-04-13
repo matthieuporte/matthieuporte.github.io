@@ -2,8 +2,6 @@
 layout: project
 name: Luminosité Eternelle
 year: 2023
-solo: false
-duration: 6 months
 featured: true
 ---
 

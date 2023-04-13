@@ -1,9 +1,7 @@
 ---
 layout: project
 name: Shar
-year: 2028
-solo: false
-duration: 1week
+year: 2018
 featured: false
 ---
 

@@ -1,10 +1,14 @@
 ---
 layout: post
+featured: true
 ---
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=jNQXAC9IVRw
 " target="_blank"><img src="http://img.youtube.com/vi/jNQXAC9IVRw/0.jpg" 
 alt="IMAGE ALT TEXT HERE" border="0" /></a>
+
+___
+
 
 # H1
 ## H2

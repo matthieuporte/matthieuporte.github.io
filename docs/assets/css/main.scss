@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "monokai.css";
+
 $sand: #faf4d3;
 $blue: #284387;
 $vermeil: #6b0e05;
@@ -21,7 +23,9 @@ body{
     margin:0;
     font-weight: 500;
 }
-
+.anti-p{
+    margin: 0;
+}
 
 @media (max-width : 1200px){
     body{
@@ -37,6 +41,23 @@ body{
     }
 }
 
+.display-none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+.text-crossed-vermeil{
+    text-decoration:line-through;
+    text-decoration-color: $vermeil;
+}
+.text-vermeil{
+    color: $vermeil;
+}
+.list-filters span{
+    cursor: pointer;
+    font-size: small;
+}
 .w-full{
     width: full;
 }
@@ -65,6 +86,9 @@ body{
 }
 .text-vermeil{
     color:$vermeil;
+}
+.text-right{
+    text-align: right;
 }
 .text-grey{
     color:grey;

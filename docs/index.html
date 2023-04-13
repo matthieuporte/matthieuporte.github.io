@@ -6,24 +6,84 @@ title: "hub"
 <h1 class="center bold text-lg space-top">matthi<span class="negative-vermeil">r</span>u</h1>
 <h3 class="center light text-grey Bspace-bottom">Frontend developer - student @<a href="https://www.epita.fr/" target="_blank" class="anti-a text-blue hover-negative-blue">EPITA</a></h3>
 
-<p class="center text-grey light space-bottom">Things I made :</p>
 
-  {% for project in site.projects  %}
+<div class="text-grey space-bottom ">
+  <div class="list-filters">
+    Things I made : <span id="Pfeatured" class="text-crossed-vermeil">featured</span> - <span id="Precent">recent</span> - <span id="Pall">all</span>
+  </div>
+</div>
+<div id="LPall" class="display-none">
+  {% assign sorted = site.projects | sort: 'year' | reverse  %}
+
+  {% for project in sorted  %}
 
     <a href="{{ project.url }}" class="anti-a"><div class="card space-bottom">
       <h4 class="anti-h4"><span class="text-grey light">{{ project.year }}</span> - {{ project.name }}</h4>
     </div></a>
 
   {% endfor %}
+</div>
+<div id="LPfeatured">
+  {% assign sorted = site.projects | where_exp: "item", "item.featured == true" | sort: 'year' | reverse %}
 
-<br>
+  {% for project in sorted %}
 
-<p class="center text-grey light space-bottom">Notepad :</p>
-
-  {% for post in site.posts  %}
-
-    <a href="{{ post.url }}" class="anti-a"><div class="card space-bottom">
-      <h4 class="anti-h4"><span class="text-grey light">{{ post.date | date_to_string}}</span> - <span>{{ post.title }}</span></h4>
+    <a href="{{ project.url }}" class="anti-a"><div class="card space-bottom">
+      <h4 class="anti-h4"><span class="text-grey light">{{ project.year }}</span> - {{ project.name }}</h4>
     </div></a>
 
   {% endfor %}
+</div>
+<div id="LPrecent" class="display-none">
+  {% assign sorted = site.projects | sort: 'year' | reverse  %}
+
+  {% for project in sorted limit:2 %}
+
+    <a href="{{ project.url }}" class="anti-a"><div class="card space-bottom">
+      <h4 class="anti-h4"><span class="text-grey light">{{ project.year }}</span> - {{ project.name }}</h4>
+    </div></a>
+
+  {% endfor %}
+</div>
+
+
+<br>
+
+<div class="text-grey space-bottom ">
+  <div class="list-filters">
+    Notepad : <span id="Afeatured" class="text-crossed-vermeil">featured</span> - <span id="Arecent">recent</span> - <span id="Aall">all</span>
+  </div>
+</div>
+<div id="LAfeatured">
+  {% assign sorted = site.posts | where_exp: "item", "item.featured == true" %}
+  
+    {% for post in sorted  %}
+  
+      <a href="{{ post.url }}" class="anti-a"><div class="card space-bottom">
+        <h4 class="anti-h4"><span class="text-grey light">{{ post.date | date_to_string}}</span> - <span>{{ post.title }}</span></h4>
+      </div></a>
+  
+    {% endfor %}
+</div>
+<div id="LArecent" class="display-none">
+  
+    {% for post in site.posts  limit:3 %}
+  
+      <a href="{{ post.url }}" class="anti-a"><div class="card space-bottom">
+        <h4 class="anti-h4"><span class="text-grey light">{{ post.date | date_to_string}}</span> - <span>{{ post.title }}</span></h4>
+      </div></a>
+  
+    {% endfor %}
+</div>
+<div id="LAall" class="display-none">
+  
+    {% for post in site.posts  %}
+  
+      <a href="{{ post.url }}" class="anti-a"><div class="card space-bottom">
+        <h4 class="anti-h4"><span class="text-grey light">{{ post.date | date_to_string}}</span> - <span>{{ post.title }}</span></h4>
+      </div></a>
+  
+    {% endfor %}
+</div>
+
+  <script src="{{ "/assets/js/filters.js" | relative_url}}"></script>

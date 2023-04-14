@@ -5,4 +5,6 @@ year: 2023
 featured: true
 ---
 
-A static website made for my mother.
+Christine Porte is a reflexologist in Le Mans, I made her website.
+
+Take a look at it : <https://www.reflexologie-lemans.fr/>

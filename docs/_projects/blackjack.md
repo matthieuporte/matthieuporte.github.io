@@ -2,7 +2,7 @@
 layout: project
 name: blackjack
 year: 2021
-showcase: false
+featured: false
 ---
 
 I love blackjack so much that I coded it twice, once in python and once in ruby.

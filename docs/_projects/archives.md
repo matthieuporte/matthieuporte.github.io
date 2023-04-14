@@ -2,7 +2,7 @@
 layout: project
 name: archives
 year: 2018
-showcase: false
+featured: false
 ---
 
 I made my first website when I was 14. I've done many random things since and I found back some of them. Here they are, the most recent first :

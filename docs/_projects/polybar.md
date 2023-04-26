@@ -1,6 +1,6 @@
 ---
 layout: project
-name: polybar
+name: polybar_dotfiles
 year: 2023
 featured: false
 ---
@@ -109,22 +109,6 @@ label-empty-padding = 1
 type = internal/i3
 format = <label-mode>
 ;label-mode-foreground = ${colors.alert}
-
-[module/polypomo]
-type = custom/script
-
-exec = ~/.config/polybar/polypomo/polypomo
-tail = true
-
-label = %output%
-click-left = ~/.config/polybar/polypomo/polypomo toggle
-click-right = ~/.config/polybar/polypomo/polypomo end
-click-middle = ~/.config/polybar/polypomo/polypomo lock
-scroll-up = ~/.config/polybar/polypomo/polypomo time +60
-scroll-down = ~/.config/polybar/polypomo/polypomo time -60
-
-font-0 = fixed:pixelsize=10;1
-font-1 = Noto Color Emoji:scale=15:antialias=false;0
 
 [module/battery]
 type = internal/battery

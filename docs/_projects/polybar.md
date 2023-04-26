@@ -15,7 +15,7 @@ Here's an image of it :
 ![my polybar as it is now][mypolybar]
 
 
-```
+```javascript
 ;==========================================================
 ;
 ;

@@ -1,7 +1,5 @@
 ---
-layout: project
-name: polybar_dotfiles
-year: 2023
+layout: post
 featured: false
 ---
 

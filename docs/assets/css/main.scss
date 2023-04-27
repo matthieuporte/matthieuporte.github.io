@@ -4,6 +4,8 @@
 @import "monokai.css";
 
 $sand: #faf4d3;
+$marble:#dadfe1;
+$lightmarble:#efeff0;
 $blue: #284387;
 $vermeil: #6b0e05;
 
@@ -125,3 +127,49 @@ img{
     color:white;
     background-color:$blue;
 }
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table thead tr {
+    background-color: $vermeil;
+    color: #ffffff;
+    text-align: left;
+}
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: white;
+}
+table tbody tr:nth-of-type(odd) {
+    background-color: $lightmarble;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid $vermeil;
+}
+table tbody tr.active-row {
+    font-weight: bold;
+    color: $vermeil;
+}
+
+hr{
+  
+    border: 0;
+    height: 1px;
+    width: 75%;
+    position: relative;
+    margin: 30px auto;
+    background: $vermeil;
+  }

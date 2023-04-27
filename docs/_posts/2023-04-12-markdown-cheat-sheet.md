@@ -123,7 +123,7 @@ ___
 
 ### Tables
 
-Here's how to build a table in mardown
+Here's how to build a table in markdown
 
 ```
 | Month    | Savings |
@@ -143,8 +143,8 @@ It doesn´t have to be aligned and the result will be the same.
 
 You can put some colon (:) to align the text in a particular direction.
 
-:-- means aligned to the left
-:-: means centered
---: meand aligned to the right
+* :-- means aligned to the left
+* :-: means centered
+* --: means aligned to the right
 
 ___

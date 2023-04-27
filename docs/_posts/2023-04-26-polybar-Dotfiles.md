@@ -7,12 +7,16 @@ Unixporn is the art of wasting time customising your unix.
 I really enjoy setting up my [polybar](https://github.com/polybar/polybar) and here are the dotfiles if someone is curious or if I ever loose them.
 
 
-[imagepolybar]:{{ "/assets/images/polybar.png" | relative_url }}
+[imagepolybar1]:{{ "/assets/images/polybar1.png" | relative_url }}
+[imagepolybar2]:{{ "/assets/images/polybar2.png" | relative_url }}
+[imagepolybar3]:{{ "/assets/images/polybar3.png" | relative_url }}
 
-![my polybar as it is now][imagepolybar]
+![my polybar as it is now1][imagepolybar1]
+![my polybar as it is now2][imagepolybar3]
+![my polybar as it is now3][imagepolybar2]
 
 
-```javascript
+```python
 ;==========================================================
 ;
 ;

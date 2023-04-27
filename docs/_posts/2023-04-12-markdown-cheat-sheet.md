@@ -121,14 +121,30 @@ Unordered lists can be made with + - and *
 ___
 
 
-### Youtube Videos
+### Tables
+
+Here's how to build a table in mardown
 
 ```
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=VIDEOID"
- target="_blank">
-<img src="http://img.youtube.com/vi/VIDEOID/0.jpg"
- alt="IMAGE ALT TEXT HERE" border="0" />
-</a>
+| Month    | Savings |
+| -------- | ------- |
+| January  | $250    |
+| February | $80     |
+| March    | $420    |
 ```
+
+| Month    | Savings |
+| -------- | ------- |
+| January  | $250    |
+| February | $80     |
+| March    | $420    |
+
+It doesn´t have to be aligned and the result will be the same.
+
+You can put some colon (:) to align the text in a particular direction.
+
+:-- means aligned to the left
+:-: means centered
+--: meand aligned to the right
 
 ___

@@ -65,7 +65,7 @@ img{
     font-size: small;
 }
 .w-full{
-    width: full;
+    width: 100%;
 }
 .align-right{
     text-align: right;
@@ -111,8 +111,14 @@ img{
 .space-top{
     margin-top: 25px;
 }
+.Bspace-top{
+    margin-top: 75px;
+}
 .space-bottom{
     margin-bottom: 20px;
+}
+.Mspace-bottom{
+    margin-bottom: 50px;
 }
 .Bspace-bottom{
     margin-bottom: 100px;

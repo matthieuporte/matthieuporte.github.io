@@ -15,7 +15,7 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |   :w    | write               |
 |   :q    | quit                |
 |   :q!   | quit without saving |
-|         |                     |
+|  :set tw=80   | set text wrap to 80 |
 
 | Shortcut | Function                                                          |
 |:--------:|-------------------------------------------------------------------|

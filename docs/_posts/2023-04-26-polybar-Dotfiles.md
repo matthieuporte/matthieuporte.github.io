@@ -16,7 +16,7 @@ I really enjoy setting up my [polybar](https://github.com/polybar/polybar) and h
 ![my polybar as it is now3][imagepolybar2]
 
 
-```python
+```ini
 ;==========================================================
 ;
 ;

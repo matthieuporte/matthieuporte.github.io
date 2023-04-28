@@ -66,6 +66,8 @@ If you don´t indicate any language, the text will be shown white,
 but any code is <i>safe here</i>
 ```
 
+[Here](https://www.fabriziomusacchio.com/blog/2021-08-11-Syntax_Highlighting_in_Jekyll/)'s a list of all the languages available.
+
 
 ___
 

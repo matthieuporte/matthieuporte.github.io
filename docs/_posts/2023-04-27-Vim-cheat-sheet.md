@@ -26,13 +26,13 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |    x     | deletes a letter                                                  |
 |    d     | waits for a motion and deletes accordingly                        |
 |    dd    | deletes the whole line                                            |
-|    p     | pastes the just deleted line                                      | 
+|    p     | pastes whatever was just deleted                            | 
 | r(char)  | replace the current char                                          | 
 |    c     | deletes according to the motion given and puts you in insert mode | 
 |    cc    | deletes the end of the line and puts you in insert mode           | 
-|          |                                                                   | 
-|          |                                                                   | 
-|          |                                                                   | 
+|    G     | gets you to the end of the file                                   | 
+|    gg    | gets you to the beggining of the file                             | 
+|   (x)G   | gets you to the line number "x"                                   | 
 |          |                                                                   |
 
 ### Motions
@@ -43,9 +43,8 @@ Motions are a parameter of the functions. It lets you decide what you want to do
 | Shortcut | Motion                               |
 |:--------:|--------------------------------------|
 |    w     | to the char before the next word     |
-|    b     | to the char before the previous word |
 |    e     | to the end of the current word       |
-|    ge    | to the beginning of the current word |
+|    b     | to the first char of the word |
 |    $     | to the end of the line               |
 |          |                                      |
 

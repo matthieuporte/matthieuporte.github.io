@@ -13,6 +13,7 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |:-------:|---------------------|
 |   :x    | write and quit      |
 |   :w    | write               |
+|   :w (filename)   | creates the file (filename)   |
 |   :q    | quit                |
 |   :q!   | quit without saving |
 |  :set tw=80   | set text wrap to 80 |
@@ -20,6 +21,17 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |:#,#s/old/new/g| the substitute function on the range of lines defined by #,# (# being a number) |
 |:%s/old/new/g|the substitute function applied to the whole file |
 |:%s/old/new/gc|the substitute function on the whole file asking whether to substitute or not every time| 
+|:!(command)|execute a command in the console and then gets back to your text|
+
+### Modes
+
+---
+
+|key|Mode|
+|:-:|---|
+|esc|NORMAL|
+|i|INSERT|
+|v|VISUAL|
 
 ### Shortcuts
 

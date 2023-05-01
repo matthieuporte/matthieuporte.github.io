@@ -22,6 +22,8 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |:%s/old/new/g|the substitute function applied to the whole file |
 |:%s/old/new/gc|the substitute function on the whole file asking whether to substitute or not every time| 
 |:!(command)|execute a command in the console and then gets back to your text|
+|:r (filename)|pastes the file in your text. You can also use a **command**|
+|||
 
 ### Modes
 
@@ -32,6 +34,8 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |esc|NORMAL|
 |i|INSERT|
 |v|VISUAL|
+|R|REPLACE|
+
 
 ### Shortcuts
 
@@ -43,6 +47,9 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |    u     | undo                                                              |
 |    U     | undo everything that happened to that particular line             | 
 |  CTRL+R  | redo                                                              | 
+|o| opens a line below and place you in insert mode |
+|a|put you in insert mode on the next char (useful when at the end of the line)|
+|y|yank(copy)|
 |    x     | deletes a letter                                                  |
 |    d     | waits for a motion and deletes accordingly                        |
 |    dd    | deletes the whole line                                            |

@@ -23,7 +23,7 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |:%s/old/new/gc|the substitute function on the whole file asking whether to substitute or not every time| 
 |:!(command)|execute a command in the console and then gets back to your text|
 |:r (filename)|pastes the file in your text. You can also use a **command**|
-|||
+|:help (command)|opens another page with help about the requested command. writing only help gives you general information.|
 
 ### Modes
 
@@ -49,7 +49,7 @@ I enjoy learning vim, I get more and more efficient with it, but learning it tak
 |  CTRL+R  | redo                                                              | 
 |o| opens a line below and place you in insert mode |
 |a|put you in insert mode on the next char (useful when at the end of the line)|
-|y|yank(copy)|
+|y|yank(copy) you need to be in visual mode. |
 |    x     | deletes a letter                                                  |
 |    d     | waits for a motion and deletes accordingly                        |
 |    dd    | deletes the whole line                                            |

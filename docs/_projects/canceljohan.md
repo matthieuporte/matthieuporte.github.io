@@ -5,10 +5,10 @@ year: 2023
 featured: false
 ---
 
-My friend [Johan](https://github.com/jojoasticot) is great, but sometimes he's a good 7 on the *villejuif scale* so **he needs to be cancelled.**
+My friend [Johan](https://github.com/jojoasticot) is great, but sometimes he's a good 7 on the [*villejuif scale*](https://fr.wikipedia.org/wiki/%C3%89chelle_de_Villejuif) so **he needs to be cancelled.**
 
 
-In that purpose I build the website [canceljohan.com](https://canceljohan.com) so that he can receive the karma he deserves. 
+In that purpose I built the website [canceljohan.com](https://canceljohan.com) so that he can receive the karma he deserves. 
 There is a possibility to cancel him as well as to free him if he does good actions, so it's entierly up to you ! (but please cancel him)
 
 [canceljohan]:{{ "/assets/images/canceljohan.jpg" | relative_url }}

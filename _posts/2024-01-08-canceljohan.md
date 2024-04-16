@@ -1,8 +1,10 @@
 ---
-layout: project
-name: canceljohan
-year: 2023
-featured: false
+title: CancelJohan.com
+author: matthieu
+description: Johan Emmanuelli very own cancelometer !
+date: 2024-01-08
+categories: [Project, misc]
+tags: [web]
 ---
 
 My friend [Johan](https://github.com/jojoasticot) is great, but sometimes he's a good 7 on the [*villejuif scale*](https://fr.wikipedia.org/wiki/%C3%89chelle_de_Villejuif) so **he needs to be cancelled.**

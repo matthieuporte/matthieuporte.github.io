@@ -1,8 +1,10 @@
 ---
-layout: project
-name: blackjack
-year: 2021
-featured: false
+title: Blackjack game
+author: matthieu
+description: The game of blackjack coded in ruby
+date: 2023-07-26
+categories: [Project, Ruby]
+tags: [game, ruby]
 ---
 
 I love blackjack so much that I coded it twice, once in python and once in ruby.

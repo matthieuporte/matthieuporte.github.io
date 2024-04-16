@@ -19,4 +19,4 @@ There is a possibility to cancel him as well as to free him if he does good acti
 
 ---
 
-simply go to [canceljohan.com](https://canceljohan.com) and help us cancel him !
+Simply go to [canceljohan.com](https://canceljohan.com) and help us cancel him !
